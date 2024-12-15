@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frise Chronologique</title>
+  <style>
+    .timeline {
+      display: flex;
+      overflow-x: auto;
+      padding: 20px;
+      white-space: nowrap;
+    }
+
+    .timeline-item {
+      display: inline-block;
+      width: 200px;
+      margin-right: 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .timeline-date {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content {
+      background-color: #f8f8f8;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tooltip {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 3px;
+      z-index: 10;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item:hover .tooltip {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Mon Site Web</h1>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+      <div class="timeline-date">2024</div>
+      <div class="timeline-content">
+        <img src="assets/icon1.png" alt="Icone 1">
+        <p>Événement 1</p>
+        <div class="tooltip">Détails de l'événement 1</div>
+      </div>
+    </div>
+    <div class="timeline-item" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+      <div class="timeline-date">2025</div>
+      <div class="timeline-content">
+        <img src="assets/icon2.png" alt="Icone 2">
+        <p>Événement 2</p>
+        <div class="tooltip">Détails de l'événement 2</div>
+      </div>
+    </div>
+    <!-- Ajoute plus d'événements selon tes besoins -->
+  </div>
+
+  <script>
+    function showTooltip(event) {
+      var tooltip = event.target.querySelector('.tooltip');
+      tooltip.style.display = 'block';
+    }
+
+    function hideTooltip(event) {
+      var tooltip = event.target.querySelector('.tooltip');
+      tooltip.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

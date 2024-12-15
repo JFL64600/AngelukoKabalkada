@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jour de Calendrier</title>
+  <style>
+    .calendar-day {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .date-number {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    .event {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar-day">
+    <div class="date-number">15</div>
+    <div class="event">Réunion<br>14h00</div>
+  </div>
+</body>
+</html>
