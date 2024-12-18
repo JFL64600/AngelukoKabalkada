@@ -76,7 +76,7 @@ footer ul li a:active {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
+	justify-content: right;
 }
 
 .calendar-day {
@@ -88,7 +88,7 @@ footer ul li a:active {
 	width: 350px;
 	height: 200px;
 	margin: 0.5rem;
-	background-color: #ebe7e6;
+	background-color: #a41916;
 	border-radius: 0.5rem;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -96,11 +96,11 @@ footer ul li a:active {
 .date-number {
 	font-size: 2rem;
 	font-weight: bold;
-	color: #a41916;
+	color: #ebe7e6;
 }
 
 .event {
-	color: #666;
+	color: #ebe7e6;
 	text-align: center;
 }
 
