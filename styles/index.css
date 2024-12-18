@@ -14,7 +14,7 @@ header {
 	
 main {
 	padding: 20px;
-	color: white;
+	color: black;
 	position: relative;
 	min-height: 100vh;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), 
@@ -104,6 +104,18 @@ footer ul li a:active {
 	text-align: center;
 }
 
+.content-text {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: left;
+	font-size: 1.25rem;
+}
+
+.content-text-head {
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
 #language-switcher {
 	list-style: none;
 	padding: 0;
@@ -139,7 +151,7 @@ footer ul li a:active {
 #keep-inform li {
 	display: inline-block;
 	margin-right: 10px;
-	color: #a41916;
+	color: #566a51;
 	font-weight: bold;
 	font-size: 1.25rem;
 }
