@@ -24,14 +24,34 @@ main {
 
 footer {
 	background-color: #ebe7e6;
-	color: red;
 	padding: 1em;
 	min-height: 120px;
-	
 	padding: 1em;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	align-items: center;
+}
+
+footer div {
+	padding: 0;
+	color: #a41916;
+}
+
+footer ul {
+	list-style: none;
+	padding: 0;
+	color: #585755;
+	margin-top: 0;
+}
+
+footer ul li {
+	display: inline-block;
+}
+
+footer ul li a,
+footer ul li a:visited,
+footer ul li a:hover,
+footer ul li a:active {
+	color: inherit;
+	text-decoration: none;
+	margin-left: 25px;
 }
 
 .titleStart {
