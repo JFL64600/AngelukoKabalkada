@@ -113,14 +113,14 @@ footer ul li a:active {
 	text-align: center;
 }
 
-.content-text {
+.content {
 	display: grid;
 	grid-template-columns: 1.5fr 2.2fr;
 	align-items: left;
 	font-size: 1.25rem;
 }
 
-.content-text-head {
+.content-head {
 	font-weight: bold;
 	font-size: 1.5rem;
 }
