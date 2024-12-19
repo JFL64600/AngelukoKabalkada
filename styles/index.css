@@ -1,14 +1,14 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: "Aaargh", "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 header {
-	background-color: #ededef;
+	background-color: #e6e0e0;
 	padding: 1em;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	align-items: center;
 }
 	
@@ -18,7 +18,7 @@ main {
 	position: relative;
 	min-height: 100vh;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), 
-				url('../images/back.jpg') no-repeat bottom;
+				url('../images/back.jpeg') no-repeat bottom;
 	background-size: cover;
 }
 
@@ -54,7 +54,7 @@ footer ul li a:active {
 	margin-left: 25px;
 }
 
-.titleStart {
+.titleCity {
 	line-height: 100%;
 	letter-spacing: -0.125rem;
 	margin: 0;
@@ -63,7 +63,7 @@ footer ul li a:active {
 	font-weight: 500;
 }
 
-.titleEnd {
+.titleEvent {
 	line-height: 100%;
 	letter-spacing: -0.125rem;
 	margin: 0;
@@ -72,11 +72,20 @@ footer ul li a:active {
 	font-weight: bold;
 }
 
+.titleYear {
+	line-height: 100%;
+	letter-spacing: -0.125rem;
+	margin: 0;
+	font-size: 3.125rem;
+	color: #ef9ec4;
+	font-weight: bold;
+}
+
 .calendar {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: right;
+	justify-content: left;
 }
 
 .calendar-day {
@@ -88,7 +97,7 @@ footer ul li a:active {
 	width: 350px;
 	height: 200px;
 	margin: 0.5rem;
-	background-color: #a41916;
+	background-color: #38443a;
 	border-radius: 0.5rem;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -106,7 +115,7 @@ footer ul li a:active {
 
 .content-text {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1.5fr 2.2fr;
 	align-items: left;
 	font-size: 1.25rem;
 }
