@@ -37,31 +37,33 @@ footer {
   padding: 1em;
   min-height: 120px;
   padding: 1em;
-}
 
-footer div {
-  padding: 0;
-  color: #a41916;
-}
+  div {
+    padding: 0;
+    color: #a41916;
+  }
 
-footer ul {
-  list-style: none;
-  padding: 0;
-  color: #585755;
-  margin-top: 0;
-}
+  ul {
+    list-style: none;
+    padding: 0;
+    color: #585755;
+    margin-top: 0;
 
-footer ul li {
-  display: inline-block;
-}
+    li {
+      display: inline-block;
 
-footer ul li a,
-footer ul li a:visited,
-footer ul li a:hover,
-footer ul li a:active {
-  color: inherit;
-  text-decoration: none;
-  margin-left: 25px;
+      a {
+        color: inherit;
+        text-decoration: none;
+        margin-left: 25px;
+
+        &:hover,
+        &:focus-visible {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 .titleCity {
@@ -139,46 +141,50 @@ footer ul li a:active {
   list-style: none;
   padding: 0;
   text-align: right;
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
 }
 
-#language-switcher li {
-  display: inline-block;
-  margin-right: 10px;
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
-#language-switcher li a,
-#language-switcher li a:visited,
-#language-switcher li a:hover,
-#language-switcher li a:active {
+#language-switcher li a {
   color: #a41916;
   text-decoration: none;
-}
 
-#language-switcher li a.selected {
-  color: #585755;
-  cursor: default;
+  &:not(.selected):hover,
+  &:not(.selected):focus-visible {
+    text-decoration: underline;
+  }
+
+  &.selected {
+    color: #585755;
+    cursor: default;
+  }
 }
 
 #keep-inform {
   list-style: none;
   padding: 0;
   text-align: center;
-}
 
-#keep-inform li {
-  display: inline-block;
-  margin-right: 10px;
-  color: #566a51;
-  font-weight: bold;
-  font-size: 1.25rem;
-}
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    color: #566a51;
+    font-weight: bold;
+    font-size: 1.25rem;
 
-#keep-inform li a,
-#keep-inform li a:visited,
-#keep-inform li a:hover,
-#keep-inform li a:active {
-  color: inherit;
-  text-decoration: none;
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+  }
 }
