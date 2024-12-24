@@ -17,26 +17,44 @@ header {
   background-color: #e6e0e0;
   padding: 1em;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 main {
   padding: 20px;
   color: black;
   position: relative;
-  min-height: 100vh;
+
+  @media screen and (min-width: 768px) {
+    padding-right: calc(50% + 110px);
+  }
+}
+
+.div-bg {
   background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-    url("../images/back.jpeg") no-repeat bottom;
-  background-image: image-set(
-    "../images/back.avif" type("image/avif"),
-    "../images/back.jpeg" type("image/jpeg")
+    to bottom,
+    rgba(233, 229, 228, 1) 50%,
+    rgba(0, 0, 0, 0.5) 100%
   );
-  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  @media screen and (min-width: 768px) {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      url("../images/back.jpeg") no-repeat bottom;
+    background-size: cover;
+  }
 }
 
 footer {
@@ -105,6 +123,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: left;
+  margin-top: 2em;
 }
 
 .calendar-day {
@@ -133,15 +152,13 @@ footer {
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1.5fr 2.2fr;
-  align-items: left;
   font-size: 1.25rem;
 }
 
 .content-head {
   font-weight: bold;
   font-size: 1.5rem;
+  margin-top: 2em;
 }
 
 #language-switcher {
