@@ -5,3 +5,4 @@
 *.sqlite
 /.vs/AngelukoKabalkada/CopilotIndices/17.12.38.29086
 /.vs/AngelukoKabalkada/FileContentIndex
+.DS_Store
