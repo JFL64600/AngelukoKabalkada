@@ -21,6 +21,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--bg-color-main);
   font-family: "Aaargh", "Inter Tight", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
@@ -64,6 +65,7 @@ main {
   right: 0;
   bottom: 0;
   z-index: -1;
+
   @media screen and (min-width: 768px) {
     background: linear-gradient(
         to bottom,
@@ -79,10 +81,15 @@ footer {
   background-color: var(--bg-color-footer);
   padding: 1em;
   min-height: 120px;
-  padding: 1em;
+  display: flex;
+  flex-direction: column;
 
-  div {
-    padding: 0;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  h3 {
     color: var(--red-color);
   }
 
@@ -151,8 +158,8 @@ footer {
   justify-content: center;
   border: 1px solid var(--light-color);
   width: 350px;
-  height: 200px;
-  margin: 0.5rem;
+  max-width: 350px;
+  min-height: 200px;
   background-color: var(--green-color);
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
