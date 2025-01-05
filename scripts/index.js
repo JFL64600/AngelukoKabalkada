@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
 	const languageLinks = document.querySelectorAll('#language-switcher a');
 	languageLinks.forEach(link => {
 		link.addEventListener('click', function(event) {
@@ -7,4 +7,4 @@ document.addEventListener('DOMContentLoaded', function() {
 			window.location.href = '../../sites/' + newUrl + '/index.html';
 		});
 	});
-});
+});*/
