@@ -201,6 +201,7 @@ footer {
 .event {
   color: var(--light-color);
   text-align: center;
+  margin-top: 1em;
 }
 
 .content {

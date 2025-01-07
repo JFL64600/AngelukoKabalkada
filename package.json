@@ -3,15 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "http-server",
+    "start": "npm run i18n:watch & npm run serve",
     "prettier": "prettier index.html sites styles --write",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "i18n": "static-i18n --locales eu --locales fr --allowHtml true www",
+    "i18n:watch": "npm-watch i18n",
+    "serve": "http-server"
+  },
+  "watch": {
+    "i18n": {
+      "patterns": [
+        "www"
+      ],
+      "extensions": "json,html",
+      "quiet": false
+    }
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "http-server": "^14.1.1",
-    "prettier": "^3.4.2"
+    "npm-watch": "^0.13.0",
+    "prettier": "^3.4.2",
+    "static-i18n": "^0.2.10"
   }
 }
