@@ -13,8 +13,19 @@
     "event": "Biltzar Nagusi Eratzailea"
   },
   "footer": {
-    "references": "Erreferentziak",
+    "references": {
+      "titre": "Erreferentziak",
+      "toberak": {
+        "titre": "Toberak",
+        "lien": "https://www.eke.eus/eu/kultura/antzerkigintza/toberak"
+      }
+    },
     "charivaris": "Toberak",
+    "actualités": {
+      "titre": "Berriak",
+      "01": "Anglet aura sa cavalcade en septembre 2026 (mediabask)",
+      "02": "Kabalkadaren helburua da Angeluko jendea elkartzea... (Gure Irratia)"
+    },
     "communautés": "Erkidegoak"
   }
 }

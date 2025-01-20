@@ -13,8 +13,18 @@
     "event": "Assemblée Générale Constitutive"
   },
   "footer": {
-    "references": "Références",
-    "charivaris": "Les charivaris ou Toberak",
+    "references": {
+      "titre": "Références",
+      "toberak": {
+        "titre": "Les charivaris ou Toberak",
+        "lien": "https://www.eke.eus/fr/culture-basque/theatre-basque/charivaris-ou-toberak"
+      }
+    },
+    "actualités": {
+      "titre": "Actualités",
+      "01": "Anglet aura sa cavalcade en septembre 2026 (mediabask)",
+      "02": "Le but de la cavalcade est de rassembler les habitants d'Angulet... (Gure Irratia)"
+    },
     "communautés": "Communautés"
   }
 }
