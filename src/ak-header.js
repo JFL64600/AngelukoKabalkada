@@ -1,5 +1,17 @@
 import { html, css, LitElement } from "lit";
-import { msg } from "@lit/localize";
+import { msg, updateWhenLocaleChanges } from "@lit/localize";
+import { getLocale, setLocaleFromUrl } from "./localization.js";
+
+import {
+  sourceLocale,
+  targetLocales,
+  allLocales,
+} from "./generated/locale-codes.js";
+
+const localeNames = {
+  fr: "FR",
+  eu: "EUS",
+};
 
 export class AkHeader extends LitElement {
   static styles = css`
@@ -57,9 +69,13 @@ export class AkHeader extends LitElement {
         font-weight: bold;
         font-size: 1.25rem;
 
-        a {
+        button {
           color: var(--red-color);
           text-decoration: none;
+          background: none;
+          border: none;
+          font-weight: bold;
+          font-size: 1.25rem;
 
           &:not(.selected):hover,
           &:not(.selected):focus-visible {
@@ -113,6 +129,7 @@ export class AkHeader extends LitElement {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
   }
 
   render() {
@@ -172,14 +189,30 @@ export class AkHeader extends LitElement {
         </li>
       </ul>
       <ul class="language-switcher">
-        <li>
-          <a href="../eu/index.html">EUS</a>
-        </li>
-        <li>
-          <a href="../fr/index.html">FR</a>
-        </li>
+        ${allLocales.map(
+          (locale) =>
+            html`<li>
+              <button
+                @click=${this.localeClicked}
+                data-value="${locale}"
+                class="${locale === getLocale() ? "selected" : ""}"
+              >
+                ${localeNames[locale]}
+              </button>
+            </li>`
+        )}
       </ul>
     </header>`;
+  }
+
+  localeClicked(event) {
+    const newLocale = event.target.dataset.value;
+    if (newLocale !== getLocale()) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("locale", newLocale);
+      window.history.pushState(null, "", url.toString());
+      setLocaleFromUrl();
+    }
   }
 }
 customElements.define("ak-header", AkHeader);

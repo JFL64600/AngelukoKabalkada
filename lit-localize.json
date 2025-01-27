@@ -4,7 +4,7 @@
   "targetLocales": ["eu"],
   "inputFiles": ["src/**/*.js"],
   "output": {
-    "mode": "transform",
+    "mode": "runtime",
     "outputDir": "./src/generated/locales",
     "localeCodesModule": "./src/generated/locale-codes.js"
   },
