@@ -33,7 +33,7 @@ export class AkMainIndex extends LitElement {
             transparent 50%,
             color-mix(in srgb, var(--black-color) 50%, transparent) 100%
           ),
-          url("../images/back.jpeg") no-repeat bottom;
+          url("/images/back.jpeg") no-repeat bottom;
         background-size: cover;
       }
     }

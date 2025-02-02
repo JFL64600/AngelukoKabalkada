@@ -2,11 +2,7 @@ import { html, css, LitElement } from "lit";
 import { msg, updateWhenLocaleChanges } from "@lit/localize";
 import { getLocale, setLocaleFromUrl } from "./localization.js";
 
-import {
-  sourceLocale,
-  targetLocales,
-  allLocales,
-} from "./generated/locale-codes.js";
+import { allLocales } from "./generated/locale-codes.js";
 
 const localeNames = {
   fr: "FR",

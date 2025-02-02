@@ -2,38 +2,25 @@
   "name": "angeluko-kabalkada",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "npm run i18n:watch & npm run serve",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "prettier": "prettier index.html sites styles --write",
-    "i18n": "static-i18n --locales eu --locales fr --allowHtml true www",
-    "i18n:watch": "npm-watch i18n",
-    "serve": "http-server",
-    "wds": "npx web-dev-server --open /src/ --node-resolve",
     "lit-localize:extract": "lit-localize extract",
     "lit-localize:build": "lit-localize build"
-  },
-  "watch": {
-    "i18n": {
-      "patterns": [
-        "www"
-      ],
-      "extensions": "json,html",
-      "quiet": false
-    }
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "@lit/localize": "^0.12.2",
-    "http-server": "^14.1.1",
     "lit": "^3.2.1",
-    "npm-watch": "^0.13.0",
-    "prettier": "^3.4.2",
-    "static-i18n": "^0.2.10"
+    "prettier": "^3.4.2"
   },
   "devDependencies": {
     "@lit/localize-tools": "^0.8.0",
-    "@web/dev-server": "^0.4.6"
+    "vite": "^6.0.11"
   }
 }
