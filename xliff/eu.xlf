@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="eu" source-language="fr" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s5d45e1dd3c19a2a5">
+  <source>Je veux rester informé</source>
+  <target>Informatuta egon nahi dut</target>
+</trans-unit>
+<trans-unit id="sfee9c82c4b400243">
+  <source>Références</source>
+  <target>Erreferentziak</target>
+</trans-unit>
+<trans-unit id="scf09a713dd011669">
+  <source>Les charivaris ou Toberak</source>
+  <target>Charivariak edo Toberak</target>
+</trans-unit>
+<trans-unit id="se2452126b24872fe">
+  <source>Actualités</source>
+  <target>Berriak</target>
+</trans-unit>
+<trans-unit id="s27b146383289e4e4">
+  <source>Le but de la cavalcade est de rassembler les habitants d'Anglet... (Gure Irratia)</source>
+  <target>Kabalkadaren helburua da Angeluko jendea elkartzea... (Gure Irratia)</target>
+</trans-unit>
+<trans-unit id="sff297b1617f0fa6f">
+  <source>Anglet aura sa cavalcade en septembre 2026 (mediabask)</source>
+  <target>Angeluk izango du bere kabalkada 2026eko irailean (mediabask)</target>
+</trans-unit>
+<trans-unit id="s3ec5a83bac559d0c">
+  <source>Communautés</source>
+  <target>Erkidegoak</target>
+</trans-unit>
+<trans-unit id="h28af828b80d14754">
+  <source>Le groupe de danse traditionnelle
+            <x id="0" equiv-text="&lt;i&gt;&lt;b&gt;"/>Angeluarrak<x id="1" equiv-text="&lt;/b&gt;&lt;/i&gt;"/> fêtera en 2026 ses 60 ans d'existence et
+            d'engagement dans la préservation des traditions basques à travers
+            la danse. Pour marquer cet anniversaire, le groupe s'associe aux
+            associations angloys et organise une grande cavalcade qui
+            rassemblera petits et grands dans un moment festif.</source>
+  <target><x id="0" equiv-text="&lt;i&gt;&lt;b&gt;"/>Angeluarrak<x id="1" equiv-text="&lt;/b&gt;&lt;/i&gt;"/> dantza taldeak 2026an 60 urte beteko ditu, eta urtebetetze horren kari, taldeak angeluar elkarteekin elkarlanean, kabalkada handi bat antolatuko du, ttiki eta handiak bilduz, giro alaiean.</target>
+</trans-unit>
+<trans-unit id="h292a3aeb0dbfa761">
+  <source>Cet événement culturel <x id="0" equiv-text="&lt;b&gt;"/>important<x id="1" equiv-text="&lt;/b&gt;"/> est une occasion unique
+            de célébrer l'histoire d"<x id="2" equiv-text="&lt;i&gt;&lt;b&gt;"/>Angeluarrak<x id="3" equiv-text="&lt;/b&gt;&lt;/i&gt;"/> et de
+            renforcer les liens entre les différentes associations d'Anglet,
+            tout en mettant à l'honneur la richesse et la diversité du
+            patrimoine local. La cavalcade promet d'être un temps fort dans le
+            calendrier culturel de la ville, offrant aux habitants et aux
+            visiteurs une immersion dans les traditions basques à travers des
+            danses, des costumes, des musiques et du théâtre.</source>
+            <target>Ekitaldi <x id="0" equiv-text="&lt;b&gt;"/>kultural garrantzitsu<x id="1" equiv-text="&lt;/b&gt;"/> honek aukera ezin hobea eskainiko du <x id="2" equiv-text="&lt;i&gt;&lt;b&gt;"/>Angeluarrak<x id="3" equiv-text="&lt;/b&gt;&lt;/i&gt;"/> taldearen historiaren ospakizunerako. Aldi berean, Angeluko elkarte eta talde desberdinen arteko loturak indartzeko parada izanen da tokiko ondarearen aberastasuna eta aniztasuna ospatuz. Kabalkada Angeluko egutegi kulturalean momentu garrantzitsu bat izanen da euskal tradizioetan murgiltzeko aukera eskainiz, dantza, jantzi, musika eta antzerki bidez.</target>
+</trans-unit>
+</body>
+</file>
+</xliff>
