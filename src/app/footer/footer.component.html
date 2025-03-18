@@ -1,0 +1,14 @@
+<footer>
+  @for (footerSection of footerSections(); track footerSection.title) {
+  <div>
+    <h3>{{ footerSection.title }}</h3>
+    <ul>
+      @for (link of footerSection.links; track $index) {
+      <li>
+        <a target="_blank" [href]="link.url">{{ link.title }}</a>
+      </li>
+      }
+    </ul>
+  </div>
+  }
+</footer>
