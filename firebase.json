@@ -9,5 +9,12 @@
     "frameworksBackend": {
       "region": "europe-west1"
     }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }
