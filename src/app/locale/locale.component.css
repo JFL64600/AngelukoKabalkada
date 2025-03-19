@@ -1,0 +1,22 @@
+:host {
+  display: inline-block;
+}
+
+div {
+  padding: 0.2em;
+  background: #585755;
+  border-radius: 0.5em;
+}
+
+button {
+  padding: 0.5em 1em;
+  border: none;
+  background: transparent;
+  color: #f9f9f9;
+  border-radius: 0.5em;
+  cursor: pointer;
+  &.active {
+    background: #f9f9f9;
+    color: #585755;
+  }
+}

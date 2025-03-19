@@ -1,1 +1,11 @@
-<p>body works!</p>
+<main>
+  @for (bodySection of bodySections(); track bodySection.id) {
+  <section>
+    <h2>{{ bodySection | locale : "title" }}</h2>
+    <markdown
+      [data]="bodySection | locale : 'markdown'"
+      [disableSanitizer]="true"
+    />
+  </section>
+  }
+</main>

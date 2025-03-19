@@ -1,11 +1,11 @@
 <footer>
-  @for (footerSection of footerSections(); track footerSection.title) {
+  @for (footerSection of footerSections(); track footerSection.id) {
   <div>
-    <h3>{{ footerSection.title }}</h3>
+    <h3>{{ footerSection | locale : "title" }}</h3>
     <ul>
-      @for (link of footerSection.links; track $index) {
+      @for (link of footerSection.links; track link.id) {
       <li>
-        <a target="_blank" [href]="link.url">{{ link.title }}</a>
+        <a target="_blank" [href]="link.url">{{ link | locale : "title" }}</a>
       </li>
       }
     </ul>

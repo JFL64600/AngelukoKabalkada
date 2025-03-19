@@ -1,0 +1,14 @@
+<div>
+  <button
+    [class.active]="localeService.locale() === 'FR'"
+    (click)="changeLanguage('FR')"
+  >
+    FR
+  </button>
+  <button
+    [class.active]="localeService.locale() === 'EUS'"
+    (click)="changeLanguage('EUS')"
+  >
+    EUS
+  </button>
+</div>
