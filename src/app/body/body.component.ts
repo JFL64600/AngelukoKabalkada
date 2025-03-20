@@ -1,5 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { collection, Firestore, getDocs } from '@angular/fire/firestore';
+import {
+  collection,
+  Firestore,
+  getDocs,
+  orderBy,
+  query,
+} from '@angular/fire/firestore';
 import { LocalePipe } from '../locale/locale.pipe';
 import { MarkdownComponent } from 'ngx-markdown';
 
@@ -24,7 +30,9 @@ export class BodyComponent implements OnInit {
 
   async ngOnInit() {
     const bodySections: BodySection[] = [];
-    const querySnapshot = await getDocs(collection(this.#firestore, 'body'));
+    const querySnapshot = await getDocs(
+      query(collection(this.#firestore, 'body'), orderBy('order'))
+    );
     querySnapshot.forEach((doc) => {
       const bodySection: BodySection = {
         id: doc.id,

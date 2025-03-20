@@ -1,3 +1,16 @@
 section {
   padding: 2em;
+
+  h2 {
+    color: var(--red-color);
+  }
+
+  &:nth-child(even) {
+    background-color: var(--grey-color);
+    color: white;
+
+    h2 {
+      color: var(--pink-color);
+    }
+  }
 }
