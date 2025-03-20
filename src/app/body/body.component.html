@@ -1,11 +1,19 @@
 <main>
-  @for (bodySection of bodySections(); track bodySection.id) {
+  @for (bodySection of bodySections(); track bodySection.id; let index = $index)
+  {
   <section>
     <h2>{{ bodySection | locale : "title" }}</h2>
     <markdown
       [data]="bodySection | locale : 'markdown'"
       [disableSanitizer]="true"
     />
+    @if(index === 0) {
+    <div class="keywords">
+      @for(keyword of bodySection.keywords; track keyword.id) {
+      <button (click)="openKeyword(keyword)">{{ keyword.card }}</button>
+      }
+    </div>
+    }
   </section>
   }
 </main>

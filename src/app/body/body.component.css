@@ -13,4 +13,27 @@ section {
       color: var(--pink-color);
     }
   }
+
+  .keywords {
+    button {
+      background-color: var(--pink-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 1em;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 8em;
+      height: 8em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px var(--pink-color);
+      }
+    }
+  }
 }

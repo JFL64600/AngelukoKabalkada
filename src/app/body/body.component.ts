@@ -15,6 +15,7 @@ interface BodySection {
   title_EUS: string;
   markdown_FR: string;
   markdown_EUS: string;
+  keywords?: any[];
 }
 
 @Component({
@@ -43,6 +44,31 @@ export class BodyComponent implements OnInit {
       };
       bodySections.push(bodySection);
     });
+    for await (const bodySection of bodySections) {
+      const querySnapshot = await getDocs(
+        query(
+          collection(this.#firestore, 'body', bodySection.id, 'keywords'),
+          orderBy('order')
+        )
+      );
+      querySnapshot.forEach((doc) => {
+        if (!bodySection.keywords) {
+          bodySection.keywords = [];
+        }
+        bodySection.keywords!.push({
+          id: doc.id,
+          card: doc.data()['card'],
+          markdown_FR: doc.data()['markdown_FR'],
+          markdown_EUS: doc.data()['markdown_EUS'],
+        });
+      });
+    }
+    console.log(bodySections);
     this.bodySections.set(bodySections);
+  }
+
+  openKeyword(keyword: any) {
+    console.log(keyword);
+    alert(keyword.markdown_FR);
   }
 }
