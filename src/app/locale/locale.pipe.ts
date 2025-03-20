@@ -9,6 +9,10 @@ export class LocalePipe implements PipeTransform {
   localeService = inject(LocaleService);
 
   transform(value: any, prefix: string): string {
-    return value[`${prefix}_${this.localeService.locale()}`];
+    let text = value[`${prefix}_${this.localeService.locale()}`];
+    if (!text) {
+      text = value[`${prefix}`];
+    }
+    return text;
   }
 }

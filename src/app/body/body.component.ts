@@ -57,9 +57,7 @@ export class BodyComponent implements OnInit {
         }
         bodySection.keywords!.push({
           id: doc.id,
-          card: doc.data()['card'],
-          markdown_FR: doc.data()['markdown_FR'],
-          markdown_EUS: doc.data()['markdown_EUS'],
+          ...doc.data(),
         });
       });
     }

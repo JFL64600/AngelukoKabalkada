@@ -10,7 +10,9 @@
     @if(index === 0) {
     <div class="keywords">
       @for(keyword of bodySection.keywords; track keyword.id) {
-      <button (click)="openKeyword(keyword)">{{ keyword.card }}</button>
+      <button (click)="openKeyword(keyword)">
+        {{ keyword | locale : "card" }}
+      </button>
       }
     </div>
     }
