@@ -7,7 +7,7 @@
       [data]="bodySection | locale : 'markdown'"
       [disableSanitizer]="true"
     />
-    @if(index === 0) {
+    @if(bodySection.keywords!.length > 0) {
     <div class="keywords">
       @for(keyword of bodySection.keywords; track keyword.id) {
       <button (click)="openKeyword(keyword)">
