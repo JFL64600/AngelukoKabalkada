@@ -8,6 +8,11 @@ import {
 } from '@angular/fire/firestore';
 import { LocalePipe } from '../locale/locale.pipe';
 import { MarkdownComponent } from 'ngx-markdown';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogContent,
+} from '@angular/material/dialog';
 
 interface BodySection {
   id: string;
@@ -23,9 +28,12 @@ interface BodySection {
   imports: [LocalePipe, MarkdownComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
+  providers: [LocalePipe],
 })
 export class BodyComponent implements OnInit {
   #firestore = inject(Firestore);
+  #dialog = inject(MatDialog);
+  #locale = inject(LocalePipe);
 
   bodySections = signal<BodySection[]>([]);
 
@@ -67,6 +75,21 @@ export class BodyComponent implements OnInit {
 
   openKeyword(keyword: any) {
     console.log(keyword);
-    alert(keyword.markdown_FR);
+    this.#dialog.open(DialogDataExampleDialog, {
+      data: {
+        markdown: this.#locale.transform(keyword, 'markdown'),
+      },
+    });
   }
+}
+
+@Component({
+  selector: 'dialog-data-example-dialog',
+  template: ` <mat-dialog-content>
+    <markdown [data]="data.markdown" />
+  </mat-dialog-content>`,
+  imports: [MarkdownComponent, MatDialogContent],
+})
+export class DialogDataExampleDialog {
+  data = inject(MAT_DIALOG_DATA);
 }
