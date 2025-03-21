@@ -31,3 +31,7 @@ body {
   font-family: "Aaargh", "Inter Tight", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+
+.mat-mdc-dialog-title {
+  font-size: 1.5rem !important;
+}

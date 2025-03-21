@@ -1,6 +1,8 @@
 <main>
-  @for (bodySection of bodySections(); track bodySection.id; let index = $index)
-  {
+  <anka-countdown [date]="date1" />
+  <anka-countdown [date]="date2" />
+  @for (bodySection of bodySections(); track bodySection.id; let sectionIndex =
+  $index) {
   <section>
     <h2>{{ bodySection | locale : "title" }}</h2>
     <markdown
@@ -9,8 +11,9 @@
     />
     @if(bodySection.keywords && bodySection.keywords!.length > 0) {
     <div class="keywords">
-      @for(keyword of bodySection.keywords; track keyword.id) {
-      <button (click)="openKeyword(keyword)">
+      @for(keyword of bodySection.keywords; track keyword.id; let keywordIndex =
+      $index) {
+      <button (click)="openKeyword(bodySection.keywords, keywordIndex)">
         {{ keyword | locale : "card" }}
       </button>
       }

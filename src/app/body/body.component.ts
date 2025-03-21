@@ -1,4 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+
 import {
   collection,
   Firestore,
@@ -13,8 +15,11 @@ import {
   MAT_DIALOG_DATA,
   MatDialogContent,
   MatDialogTitle,
+  MatDialogActions,
+  MatDialogClose,
 } from '@angular/material/dialog';
-import { Title } from '@angular/platform-browser';
+import { CountdownComponent } from '../countdown/countdown.component';
+import { LocaleService } from '../locale/locale.service';
 
 interface BodySection {
   id: string;
@@ -29,7 +34,7 @@ interface BodySection {
 
 @Component({
   selector: 'anka-body',
-  imports: [LocalePipe, MarkdownComponent],
+  imports: [LocalePipe, MarkdownComponent, CountdownComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
   providers: [LocalePipe],
@@ -40,6 +45,8 @@ export class BodyComponent implements OnInit {
   #locale = inject(LocalePipe);
 
   bodySections = signal<BodySection[]>([]);
+  date1 = new Date('2026-09-20');
+  date2 = new Date('2026-09-26');
 
   async ngOnInit() {
     const bodySections: BodySection[] = [];
@@ -74,13 +81,24 @@ export class BodyComponent implements OnInit {
     this.bodySections.set(bodySections);
   }
 
-  openKeyword(keyword: any) {
+  openKeyword(keywords: any[], index: number) {
+    const keyword = keywords[index];
     console.log(keyword);
-    this.#dialog.open(DialogDataExampleDialog, {
+    const dialogRef = this.#dialog.open(DialogDataExampleDialog, {
       data: {
         title: this.#locale.transform(keyword, 'card'),
         markdown: this.#locale.transform(keyword, 'markdown'),
+        index,
+        length: keywords.length,
       },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+      if (result === 'prev') {
+        this.openKeyword(keywords, index - 1);
+      } else if (result === 'next') {
+        this.openKeyword(keywords, index + 1);
+      }
     });
   }
 }
@@ -90,9 +108,32 @@ export class BodyComponent implements OnInit {
   template: ` <h2 mat-dialog-title>{{ data.title }}</h2>
     <mat-dialog-content>
       <markdown [data]="data.markdown" />
-    </mat-dialog-content>`,
-  imports: [MarkdownComponent, MatDialogTitle, MatDialogContent],
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      @if(data.index > 0) {
+      <button mat-button [mat-dialog-close]="'prev'">
+        @if(localeService.locale() === 'FR') { Précédent } @else { Aurrekoa }
+      </button>
+      } @if(data.index < data.length - 1) {
+      <button mat-button [mat-dialog-close]="'next'" cdkFocusInitial>
+        @if(localeService.locale() === 'FR') { Suivant } @else { Jarraian }
+      </button>
+      } @else {
+      <button mat-button [mat-dialog-close] cdkFocusInitial>
+        @if(localeService.locale() === 'FR') { Fermer } @else { Itxi }
+      </button>
+      }
+    </mat-dialog-actions>`,
+  imports: [
+    MarkdownComponent,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+    MatButtonModule,
+  ],
 })
 export class DialogDataExampleDialog {
   data = inject(MAT_DIALOG_DATA);
+  localeService = inject(LocaleService);
 }
