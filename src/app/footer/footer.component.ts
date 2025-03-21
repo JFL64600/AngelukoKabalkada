@@ -1,5 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { collection, Firestore, getDocs, query } from '@angular/fire/firestore';
+import {
+  collection,
+  Firestore,
+  getDocs,
+  orderBy,
+  query,
+} from '@angular/fire/firestore';
 import { LocalePipe } from '../locale/locale.pipe';
 
 interface FooterSection {
@@ -22,7 +28,9 @@ export class FooterComponent implements OnInit {
 
   async ngOnInit() {
     const footerSections: FooterSection[] = [];
-    const querySnapshot = await getDocs(collection(this.#firestore, 'footer'));
+    const querySnapshot = await getDocs(
+      query(collection(this.#firestore, 'footer'), orderBy('order'))
+    );
     querySnapshot.forEach((doc) => {
       const footerSection: FooterSection = {
         id: doc.id,
@@ -45,6 +53,7 @@ export class FooterComponent implements OnInit {
         });
       });
     }
+    console.log(footerSections);
     this.footerSections.set(footerSections);
   }
 }

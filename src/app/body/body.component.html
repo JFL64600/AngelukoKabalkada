@@ -7,13 +7,17 @@
       [data]="bodySection | locale : 'markdown'"
       [disableSanitizer]="true"
     />
-    @if(bodySection.keywords!.length > 0) {
+    @if(bodySection.keywords && bodySection.keywords!.length > 0) {
     <div class="keywords">
       @for(keyword of bodySection.keywords; track keyword.id) {
       <button (click)="openKeyword(keyword)">
         {{ keyword | locale : "card" }}
       </button>
       }
+    </div>
+    } @if(bodySection | locale : "footer") {
+    <div class="section-footer">
+      <span>{{ bodySection | locale : "footer" }}</span>
     </div>
     }
   </section>

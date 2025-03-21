@@ -12,7 +12,9 @@ import {
   MatDialog,
   MAT_DIALOG_DATA,
   MatDialogContent,
+  MatDialogTitle,
 } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 
 interface BodySection {
   id: string;
@@ -21,6 +23,8 @@ interface BodySection {
   markdown_FR: string;
   markdown_EUS: string;
   keywords?: any[];
+  footer_FR?: string;
+  footer_EUS?: string;
 }
 
 @Component({
@@ -45,10 +49,7 @@ export class BodyComponent implements OnInit {
     querySnapshot.forEach((doc) => {
       const bodySection: BodySection = {
         id: doc.id,
-        title_FR: doc.data()['title_FR'],
-        title_EUS: doc.data()['title_EUS'],
-        markdown_FR: doc.data()['markdown_FR'],
-        markdown_EUS: doc.data()['markdown_EUS'],
+        ...(doc.data() as any),
       };
       bodySections.push(bodySection);
     });
@@ -77,6 +78,7 @@ export class BodyComponent implements OnInit {
     console.log(keyword);
     this.#dialog.open(DialogDataExampleDialog, {
       data: {
+        title: this.#locale.transform(keyword, 'card'),
         markdown: this.#locale.transform(keyword, 'markdown'),
       },
     });
@@ -85,10 +87,11 @@ export class BodyComponent implements OnInit {
 
 @Component({
   selector: 'dialog-data-example-dialog',
-  template: ` <mat-dialog-content>
-    <markdown [data]="data.markdown" />
-  </mat-dialog-content>`,
-  imports: [MarkdownComponent, MatDialogContent],
+  template: ` <h2 mat-dialog-title>{{ data.title }}</h2>
+    <mat-dialog-content>
+      <markdown [data]="data.markdown" />
+    </mat-dialog-content>`,
+  imports: [MarkdownComponent, MatDialogTitle, MatDialogContent],
 })
 export class DialogDataExampleDialog {
   data = inject(MAT_DIALOG_DATA);
