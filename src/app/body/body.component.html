@@ -1,6 +1,16 @@
 <main>
-  <anka-countdown [date]="date1" />
-  <anka-countdown [date]="date2" />
+  <div>
+    <anka-countdown [date]="date1" />
+    <anka-countdown [date]="date2" />
+  </div>
+  <div>
+    <a
+      class="form-link"
+      href="https://forms.gle/ijPbUmwbi7cRhp8R7"
+      target="_blank"
+      >S'inscrire
+    </a>
+  </div>
   @for (bodySection of bodySections(); track bodySection.id; let sectionIndex =
   $index) {
   <section>
@@ -25,4 +35,12 @@
     }
   </section>
   }
+  <div>
+    <a
+      class="form-link"
+      href="https://forms.gle/ijPbUmwbi7cRhp8R7"
+      target="_blank"
+      >S'inscrire
+    </a>
+  </div>
 </main>
