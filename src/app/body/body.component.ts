@@ -43,6 +43,7 @@ export class BodyComponent implements OnInit {
   #firestore = inject(Firestore);
   #dialog = inject(MatDialog);
   #locale = inject(LocalePipe);
+  localeService = inject(LocaleService);
 
   bodySections = signal<BodySection[]>([]);
   date1 = new Date('2026-09-20');
