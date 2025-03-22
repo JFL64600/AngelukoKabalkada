@@ -42,7 +42,10 @@ export class FooterComponent implements OnInit {
     });
     for await (const footerSection of footerSections) {
       const querySnapshot = await getDocs(
-        collection(this.#firestore, 'footer', footerSection.id, 'links')
+        query(
+          collection(this.#firestore, 'footer', footerSection.id, 'links'),
+          orderBy('order')
+        )
       );
       querySnapshot.forEach((doc) => {
         footerSection.links.push({
