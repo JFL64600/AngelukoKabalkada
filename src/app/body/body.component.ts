@@ -52,7 +52,7 @@ export class BodyComponent implements OnInit {
   async ngOnInit() {
     const bodySections: BodySection[] = [];
     const querySnapshot = await getDocs(
-      query(collection(this.#firestore, 'body'), orderBy('order'))
+      query(collection(this.#firestore, 'body'), orderBy('order')),
     );
     querySnapshot.forEach((doc) => {
       const bodySection: BodySection = {
@@ -65,8 +65,8 @@ export class BodyComponent implements OnInit {
       const querySnapshot = await getDocs(
         query(
           collection(this.#firestore, 'body', bodySection.id, 'keywords'),
-          orderBy('order')
-        )
+          orderBy('order'),
+        ),
       );
       querySnapshot.forEach((doc) => {
         if (!bodySection.keywords) {
@@ -111,18 +111,31 @@ export class BodyComponent implements OnInit {
       <markdown [data]="data.markdown" />
     </mat-dialog-content>
     <mat-dialog-actions>
-      @if(data.index > 0) {
-      <button mat-button [mat-dialog-close]="'prev'">
-        @if(localeService.locale() === 'FR') { Précédent } @else { Aurrekoa }
-      </button>
-      } @if(data.index < data.length - 1) {
-      <button mat-button [mat-dialog-close]="'next'" cdkFocusInitial>
-        @if(localeService.locale() === 'FR') { Suivant } @else { Jarraian }
-      </button>
+      @if (data.index > 0) {
+        <button mat-button [mat-dialog-close]="'prev'">
+          @if (localeService.locale() === 'FR') {
+            Précédent
+          } @else {
+            Aurrekoa
+          }
+        </button>
+      }
+      @if (data.index < data.length - 1) {
+        <button mat-button [mat-dialog-close]="'next'" cdkFocusInitial>
+          @if (localeService.locale() === 'FR') {
+            Suivant
+          } @else {
+            Jarraian
+          }
+        </button>
       } @else {
-      <button mat-button [mat-dialog-close] cdkFocusInitial>
-        @if(localeService.locale() === 'FR') { Fermer } @else { Itxi }
-      </button>
+        <button mat-button [mat-dialog-close] cdkFocusInitial>
+          @if (localeService.locale() === 'FR') {
+            Fermer
+          } @else {
+            Itxi
+          }
+        </button>
       }
     </mat-dialog-actions>`,
   imports: [

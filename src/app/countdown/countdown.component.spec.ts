@@ -8,9 +8,8 @@ describe('CountdownComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CountdownComponent]
-    })
-    .compileComponents();
+      imports: [CountdownComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CountdownComponent);
     component = fixture.componentInstance;

@@ -29,7 +29,7 @@ export class FooterComponent implements OnInit {
   async ngOnInit() {
     const footerSections: FooterSection[] = [];
     const querySnapshot = await getDocs(
-      query(collection(this.#firestore, 'footer'), orderBy('order'))
+      query(collection(this.#firestore, 'footer'), orderBy('order')),
     );
     querySnapshot.forEach((doc) => {
       const footerSection: FooterSection = {
@@ -44,8 +44,8 @@ export class FooterComponent implements OnInit {
       const querySnapshot = await getDocs(
         query(
           collection(this.#firestore, 'footer', footerSection.id, 'links'),
-          orderBy('order')
-        )
+          orderBy('order'),
+        ),
       );
       querySnapshot.forEach((doc) => {
         footerSection.links.push({

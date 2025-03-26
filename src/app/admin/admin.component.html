@@ -1,0 +1,13 @@
+@if (user$ | async) {
+  @if (adminsUid().includes((user$ | async)?.uid!)) {
+    <h1>Bonjour {{ (user$ | async)?.displayName }}</h1>
+    <button mat-button color="primary" (click)="logout()">
+      Se déconnecter
+    </button>
+    <div>WIP</div>
+  } @else {
+    <h1>Vous n'êtes pas autorisé à accéder à cette page.</h1>
+  }
+} @else {
+  <button mat-button color="primary" (click)="login()">Se connecter</button>
+}

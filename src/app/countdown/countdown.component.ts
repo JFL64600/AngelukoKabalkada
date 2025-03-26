@@ -17,7 +17,7 @@ export class CountdownComponent {
     const distance = this.date().getTime() - now;
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
     );
     return { days, hours };
   });
