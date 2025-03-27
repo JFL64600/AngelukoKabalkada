@@ -41,6 +41,7 @@ section {
     }*/
 
     button {
+      position: relative;
       background-color: var(--pink-color);
       color: white;
       border: none;
@@ -54,16 +55,37 @@ section {
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: bold;
 
       &:hover,
       &:focus-visible {
         transform: scale(1.1);
         box-shadow: 0 0 10px var(--pink-color);
+
+        :has(img) {
+          opacity: 0;
+        }
       }
 
       @media (min-width: 600px) {
         width: 10em;
         height: 10em;
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        opacity: 0.3;
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px var(--pink-color);
+        opacity: 1;
       }
     }
   }

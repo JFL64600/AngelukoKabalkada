@@ -35,6 +35,9 @@
             let keywordIndex = $index
           ) {
             <button (click)="openKeyword(bodySection.keywords, keywordIndex)">
+              @if (keyword.imageUrl) {
+                <img src="{{ keyword.imageUrl }}" />
+              }
               {{ keyword | locale: "card" }}
             </button>
           }
