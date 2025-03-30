@@ -8,11 +8,22 @@ import {
 } from '@angular/fire/firestore';
 import { LocalePipe } from '../locale/locale.pipe';
 
-interface FooterSection {
+export interface FooterLink {
   id: string;
   title_FR: string;
   title_EUS: string;
-  links: { id: string; title_FR: string; title_EUS: string; url: string }[];
+  url?: string;
+  url_FR?: string;
+  url_EUS?: string;
+  order?: number;
+}
+
+export interface FooterSection {
+  id: string;
+  title_FR: string;
+  title_EUS: string;
+  links: FooterLink[];
+  order?: number;
 }
 
 @Component({
@@ -34,8 +45,7 @@ export class FooterComponent implements OnInit {
     querySnapshot.forEach((doc) => {
       const footerSection: FooterSection = {
         id: doc.id,
-        title_FR: doc.data()['title_FR'],
-        title_EUS: doc.data()['title_EUS'],
+        ...(doc.data() as any),
         links: [],
       };
       footerSections.push(footerSection);
@@ -50,9 +60,7 @@ export class FooterComponent implements OnInit {
       querySnapshot.forEach((doc) => {
         footerSection.links.push({
           id: doc.id,
-          title_FR: doc.data()['title_FR'],
-          title_EUS: doc.data()['title_EUS'],
-          url: doc.data()['url'],
+          ...(doc.data() as any),
         });
       });
     }
