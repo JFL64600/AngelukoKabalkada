@@ -21,15 +21,26 @@ import {
 import { CountdownComponent } from '../countdown/countdown.component';
 import { LocaleService } from '../locale/locale.service';
 
-interface BodySection {
+export interface BodyKeyword {
+  id: string;
+  card_FR: string;
+  card_EUS: string;
+  markdown_FR: string;
+  markdown_EUS: string;
+  imageUrl?: string;
+  order?: number;
+}
+
+export interface BodySection {
   id: string;
   title_FR: string;
   title_EUS: string;
   markdown_FR: string;
   markdown_EUS: string;
-  keywords?: any[];
+  keywords: BodyKeyword[];
   footer_FR?: string;
   footer_EUS?: string;
+  order?: number;
 }
 
 @Component({
@@ -75,7 +86,7 @@ export class BodyComponent implements OnInit {
         bodySection.keywords!.push({
           id: doc.id,
           ...doc.data(),
-        });
+        } as BodyKeyword);
       });
     }
     console.log(bodySections);

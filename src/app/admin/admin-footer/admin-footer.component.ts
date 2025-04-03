@@ -14,6 +14,7 @@ import {
   orderBy,
   query,
   updateDoc,
+  writeBatch,
 } from '@angular/fire/firestore';
 import { FooterLink, FooterSection } from '../../footer/footer.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -296,5 +297,61 @@ export class AdminFooterComponent {
         );
       }
     });
+  }
+
+  moveSectionUp(footerSection: FooterSection) {
+    const index = this.footerSections().findIndex(
+      (s) => s.id === footerSection.id,
+    );
+    if (index > 0) {
+      const previousSection = this.footerSections()[index - 1];
+      this.updateSectionOrder(footerSection, previousSection, index, index - 1);
+    }
+  }
+
+  moveSectionDown(footerSection: FooterSection) {
+    const index = this.footerSections().findIndex(
+      (s) => s.id === footerSection.id,
+    );
+    if (index < this.footerSections().length - 1) {
+      const nextSection = this.footerSections()[index + 1];
+      this.updateSectionOrder(footerSection, nextSection, index, index + 1);
+    }
+  }
+
+  updateSectionOrder(
+    footerSection: FooterSection,
+    otherSection: FooterSection,
+    index: number,
+    otherIndex: number,
+  ) {
+    console.log(
+      'updateSectionOrder',
+      footerSection,
+      otherSection,
+      index,
+      otherIndex,
+    );
+    const batch = writeBatch(this.#firestore);
+    batch.update(doc(this.#firestore, 'footer', footerSection.id), {
+      order: otherSection.order,
+    });
+    batch.update(doc(this.#firestore, 'footer', otherSection.id), {
+      order: footerSection.order,
+    });
+    batch
+      .commit()
+      .then(() => {
+        const footerSectionOrder = footerSection.order;
+        this.footerSections.update((fs) => {
+          const updatedSections = [...fs];
+          updatedSections[index].order = otherSection.order;
+          updatedSections[otherIndex].order = footerSectionOrder;
+          return updatedSections.sort((a, b) => a.order! - b.order!);
+        });
+      })
+      .catch((error) => {
+        console.error('Error updating footer section order: ', error);
+      });
   }
 }

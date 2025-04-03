@@ -13,7 +13,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AdminSectionsComponent } from './admin-sections/admin-sections.component';
 import { AdminFooterComponent } from './admin-footer/admin-footer.component';
-import { AdminAdminsComponent } from './admin-admins/admin-admins.component';
 
 @Component({
   selector: 'anka-admin',
@@ -23,7 +22,6 @@ import { AdminAdminsComponent } from './admin-admins/admin-admins.component';
     MatTabsModule,
     AdminSectionsComponent,
     AdminFooterComponent,
-    AdminAdminsComponent,
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',

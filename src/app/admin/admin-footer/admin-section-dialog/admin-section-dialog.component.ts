@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
   FormControl,
@@ -13,31 +14,35 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { BodySection } from '../../../body/body.component';
 
 @Component({
-  selector: 'anka-admin-footer-section-dialog',
+  selector: 'anka-admin-section-dialog',
   imports: [
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    JsonPipe,
     ReactiveFormsModule,
   ],
-  templateUrl: './admin-footer-section-dialog.component.html',
-  styleUrl: './admin-footer-section-dialog.component.css',
+  templateUrl: './admin-section-dialog.component.html',
+  styleUrl: './admin-section-dialog.component.css',
 })
-export class AdminFooterSectionDialogComponent {
-  readonly dialogRef = inject(MatDialogRef<AdminFooterSectionDialogComponent>);
+export class AdminSectionDialogComponent {
+  readonly dialogRef = inject(MatDialogRef<AdminSectionDialogComponent>);
   readonly data = inject(MAT_DIALOG_DATA);
 
-  footerSectionForm: FormGroup = new FormGroup({
+  sectionForm: FormGroup = new FormGroup({
     title_FR: new FormControl(this.data.title_FR, Validators.required),
     title_EUS: new FormControl(this.data.title_EUS, Validators.required),
+    footer_FR: new FormControl(this.data.footer_FR),
+    footer_EUS: new FormControl(this.data.footer_EUS),
   });
 
   onSubmit() {
-    if (this.footerSectionForm.valid) {
-      this.dialogRef.close(this.footerSectionForm.value);
+    if (this.sectionForm.valid) {
+      this.dialogRef.close(this.sectionForm.value);
     }
   }
 }

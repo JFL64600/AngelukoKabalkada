@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>Keyword</h2>
+<form [formGroup]="keywordForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Card FR</mat-label>
+      <input matInput formControlName="card_FR" cdkFocusInitial />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Card EUS</mat-label>
+      <input matInput formControlName="card_EUS" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Markdown FR</mat-label>
+      <textarea
+        matInput
+        formControlName="markdown_FR"
+        cdkFocusInitial
+        rows="5"
+        cols="30"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Markdown EUS</mat-label>
+      <textarea
+        matInput
+        formControlName="markdown_EUS"
+        rows="5"
+        cols="30"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input matInput formControlName="imageUrl" />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+    <button type="submit" [disabled]="keywordForm.invalid" mat-button>
+      @if (data.mode === "add") {
+        Add
+      } @else if (data.mode === "edit") {
+        Edit
+      }
+    </button>
+  </mat-dialog-actions>
+</form>
