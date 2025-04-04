@@ -1,0 +1,66 @@
+<main>
+  <div>
+    <anka-countdown [date]="date1" />
+    <anka-countdown [date]="date2" />
+  </div>
+  <div>
+    <a
+      class="form-link"
+      href="https://forms.gle/ijPbUmwbi7cRhp8R7"
+      target="_blank"
+    >
+      @if (localeService.locale() === "FR") {
+        S'inscrire
+      } @else {
+        Izena eman
+      }
+    </a>
+  </div>
+  @for (
+    bodySection of bodySections();
+    track bodySection.id;
+    let sectionIndex = $index
+  ) {
+    <section>
+      <h2>{{ bodySection | locale: "title" }}</h2>
+      <markdown
+        [data]="bodySection | locale: 'markdown'"
+        [disableSanitizer]="true"
+      />
+      @if (bodySection.keywords && bodySection.keywords!.length > 0) {
+        <div class="keywords">
+          @for (
+            keyword of bodySection.keywords;
+            track keyword.id;
+            let keywordIndex = $index
+          ) {
+            <button (click)="openKeyword(bodySection.keywords, keywordIndex)">
+              @if (keyword.imageUrl) {
+                <img src="{{ keyword.imageUrl }}" />
+              }
+              {{ keyword | locale: "card" }}
+            </button>
+          }
+        </div>
+      }
+      @if (bodySection | locale: "footer") {
+        <div class="section-footer">
+          <span>{{ bodySection | locale: "footer" }}</span>
+        </div>
+      }
+    </section>
+  }
+  <div>
+    <a
+      class="form-link"
+      href="https://forms.gle/ijPbUmwbi7cRhp8R7"
+      target="_blank"
+    >
+      @if (localeService.locale() === "FR") {
+        S'inscrire
+      } @else {
+        Izena eman
+      }
+    </a>
+  </div>
+</main>

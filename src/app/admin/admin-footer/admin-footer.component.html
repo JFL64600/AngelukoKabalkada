@@ -1,0 +1,160 @@
+<mat-accordion class="example-headers-align">
+  @for (
+    footerSection of footerSections();
+    track $index;
+    let i = $index;
+    let last = $last;
+    let first = $first
+  ) {
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title
+          >{{ footerSection.title_FR }} /
+          {{ footerSection.title_EUS }}</mat-panel-title
+        >
+      </mat-expansion-panel-header>
+      <div class="table-responsive">
+        <table
+          mat-table
+          [dataSource]="footerSection.links"
+          class="mat-elevation-z8"
+        >
+          <ng-container matColumnDef="labelFR">
+            <th mat-header-cell *matHeaderCellDef>Label FR</th>
+            <td mat-cell *matCellDef="let element">{{ element.title_FR }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="labelEUS">
+            <th mat-header-cell *matHeaderCellDef>Label EUS</th>
+            <td mat-cell *matCellDef="let element">{{ element.title_EUS }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="url">
+            <th mat-header-cell *matHeaderCellDef>URL</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.url }}
+              @if (element.url) {
+                <a
+                  mat-icon-button
+                  [href]="element.url"
+                  target="_blank"
+                  matTooltip="Open Link"
+                >
+                  <mat-icon>open_in_new</mat-icon>
+                </a>
+              }
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="urlFR">
+            <th mat-header-cell *matHeaderCellDef>URL FR</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.url_FR }}
+              @if (element.url_FR) {
+                <a
+                  mat-icon-button
+                  [href]="element.url_FR"
+                  target="_blank"
+                  matTooltip="Open Link"
+                >
+                  <mat-icon>open_in_new</mat-icon>
+                </a>
+              }
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="urlEUS">
+            <th mat-header-cell *matHeaderCellDef>URL EUS</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.url_EUS }}
+              @if (element.url_EUS) {
+                <a
+                  mat-icon-button
+                  [href]="element.url_EUS"
+                  target="_blank"
+                  matTooltip="Open Link"
+                >
+                  <mat-icon>open_in_new</mat-icon>
+                </a>
+              }
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                mat-icon-button
+                matTooltip="Move Up"
+                (click)="moveLinkUp(footerSection, element)"
+              >
+                <mat-icon>arrow_upward</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                matTooltip="Move Down"
+                (click)="moveLinkDown(footerSection, element)"
+              >
+                <mat-icon>arrow_downward</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                color="primary"
+                matTooltip="Edit"
+                (click)="editLink(footerSection, element)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                color="warn"
+                matTooltip="Delete"
+                (click)="deleteLink(footerSection, element)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <mat-action-row>
+        <button
+          mat-button
+          color="warn"
+          style="margin-right: auto"
+          (click)="deleteFooterSection(footerSection)"
+        >
+          Delete section
+        </button>
+        <button
+          mat-icon-button
+          matTooltip="Move Up"
+          [disabled]="first"
+          (click)="moveSectionUp(footerSection)"
+        >
+          <mat-icon>arrow_upward</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          matTooltip="Move Down"
+          [disabled]="last"
+          (click)="moveSectionDown(footerSection)"
+        >
+          <mat-icon>arrow_downward</mat-icon>
+        </button>
+        <button mat-button (click)="editSection(footerSection)">
+          Edit section
+        </button>
+        <button mat-button (click)="addLink(footerSection)">Add link</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  }
+</mat-accordion>
+<footer>
+  <button mat-button color="primary" (click)="addFooterSection()">
+    Add footer section
+  </button>
+</footer>

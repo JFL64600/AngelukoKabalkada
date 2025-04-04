@@ -1,0 +1,16 @@
+<footer>
+  @for (footerSection of footerSections(); track footerSection.id) {
+    <div>
+      <h3>{{ footerSection | locale: "title" }}</h3>
+      <ul>
+        @for (link of footerSection.links; track link.id) {
+          <li>
+            <a target="_blank" [href]="link | locale: 'url'">{{
+              link | locale: "title"
+            }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</footer>

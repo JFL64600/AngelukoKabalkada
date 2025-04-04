@@ -1,0 +1,52 @@
+header {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    align-self: end;
+  }
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    > div {
+      align-self: auto;
+    }
+  }
+}
+
+h1 {
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-size: 1.5rem;
+  display: inline-block;
+
+  @media (min-width: 400px) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 700px) {
+    font-size: 3rem;
+  }
+
+  .title-an {
+    color: var(--grey-color);
+    font-weight: 500;
+    margin-right: 0.3em;
+  }
+
+  .title-ka {
+    color: var(--red-color);
+    font-weight: bold;
+    margin-right: 0.3em;
+  }
+
+  .title-year {
+    color: var(--pink-color);
+    font-weight: bold;
+  }
+}
