@@ -7,6 +7,7 @@ import {
   getDocs,
   orderBy,
   query,
+  where,
 } from '@angular/fire/firestore';
 import { LocalePipe } from '../locale/locale.pipe';
 import { MarkdownComponent } from 'ngx-markdown';
@@ -63,7 +64,7 @@ export class BodyComponent implements OnInit {
   async ngOnInit() {
     const bodySections: BodySection[] = [];
     const querySnapshot = await getDocs(
-      query(collection(this.#firestore, 'body'), orderBy('order')),
+      query(collection(this.#firestore, 'body'), orderBy('order'),  where('order', '>', 0)),
     );
     querySnapshot.forEach((doc) => {
       const bodySection: BodySection = {
