@@ -354,4 +354,64 @@ export class AdminFooterComponent {
         console.error('Error updating footer section order: ', error);
       });
   }
+
+  moveLinkUp(footerSection: FooterSection, link: FooterLink) {
+    const index = footerSection.links.findIndex((s) => s.id === link.id);
+    if (index > 0) {
+      const previousLink = footerSection.links[index - 1];
+      this.updateLinkOrder(footerSection, link, previousLink, index, index - 1);
+    }
+  }
+
+  moveLinkDown(footerSection: FooterSection, link: FooterLink) {
+    const index = footerSection.links.findIndex((s) => s.id === link.id);
+    if (index < footerSection.links.length - 1) {
+      const nextLink = footerSection.links[index + 1];
+      this.updateLinkOrder(footerSection, link, nextLink, index, index + 1);
+    }
+  }
+
+  updateLinkOrder(
+    footerSection: FooterSection,
+    link: FooterLink,
+    otherLink: FooterLink,
+    index: number,
+    otherIndex: number,
+  ) {
+    const batch = writeBatch(this.#firestore);
+    batch.update(
+      doc(this.#firestore, 'footer', footerSection.id, 'links', link.id),
+      {
+        order: otherLink.order,
+      },
+    );
+    batch.update(
+      doc(this.#firestore, 'footer', footerSection.id, 'links', otherLink.id),
+      {
+        order: link.order,
+      },
+    );
+    batch
+      .commit()
+      .then(() => {
+        const keywordOrder = link.order;
+        this.footerSections.update((fs) => {
+          const updatedSections = [...fs];
+          const updatedKeywords = [...footerSection.links];
+          updatedKeywords[index].order = otherLink.order;
+          updatedKeywords[otherIndex].order = keywordOrder;
+          updatedSections.forEach((section) => {
+            if (section.id === footerSection.id) {
+              section.links = updatedKeywords.sort(
+                (a, b) => a.order! - b.order!,
+              );
+            }
+          });
+          return updatedSections;
+        });
+      })
+      .catch((error) => {
+        console.error('Error updating link order: ', error);
+      });
+  }
 }

@@ -34,6 +34,20 @@
             <td mat-cell *matCellDef="let element">
               <button
                 mat-icon-button
+                matTooltip="Move Up"
+                (click)="moveLinkUp(section, element)"
+              >
+                <mat-icon>arrow_upward</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                matTooltip="Move Down"
+                (click)="moveLinkDown(section, element)"
+              >
+                <mat-icon>arrow_downward</mat-icon>
+              </button>
+              <button
+                mat-icon-button
                 color="primary"
                 matTooltip="Edit"
                 (click)="editKeyword(section, element)"

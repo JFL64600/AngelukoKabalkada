@@ -348,4 +348,70 @@ export class AdminSectionsComponent {
         console.error('Error updating section order: ', error);
       });
   }
+
+  moveLinkUp(bodySection: BodySection, keyword: BodyKeyword) {
+    const index = bodySection.keywords.findIndex((s) => s.id === keyword.id);
+    if (index > 0) {
+      const previousKeyword = bodySection.keywords[index - 1];
+      this.updateLinkOrder(
+        bodySection,
+        keyword,
+        previousKeyword,
+        index,
+        index - 1,
+      );
+    }
+  }
+
+  moveLinkDown(bodySection: BodySection, keyword: BodyKeyword) {
+    const index = bodySection.keywords.findIndex((s) => s.id === keyword.id);
+    if (index < bodySection.keywords.length - 1) {
+      const nextKeyword = bodySection.keywords[index + 1];
+      this.updateLinkOrder(bodySection, keyword, nextKeyword, index, index + 1);
+    }
+  }
+
+  updateLinkOrder(
+    bodySection: BodySection,
+    keyword: BodyKeyword,
+    otherKeyword: BodyKeyword,
+    index: number,
+    otherIndex: number,
+  ) {
+    const batch = writeBatch(this.#firestore);
+    batch.update(
+      doc(this.#firestore, 'body', bodySection.id, 'keywords', keyword.id),
+      {
+        order: otherKeyword.order,
+      },
+    );
+    batch.update(
+      doc(this.#firestore, 'body', bodySection.id, 'keywords', otherKeyword.id),
+      {
+        order: keyword.order,
+      },
+    );
+    batch
+      .commit()
+      .then(() => {
+        const keywordOrder = keyword.order;
+        this.sections.update((fs) => {
+          const updatedSections = [...fs];
+          const updatedKeywords = [...bodySection.keywords];
+          updatedKeywords[index].order = otherKeyword.order;
+          updatedKeywords[otherIndex].order = keywordOrder;
+          updatedSections.forEach((section) => {
+            if (section.id === bodySection.id) {
+              section.keywords = updatedKeywords.sort(
+                (a, b) => a.order! - b.order!,
+              );
+            }
+          });
+          return updatedSections;
+        });
+      })
+      .catch((error) => {
+        console.error('Error updating link order: ', error);
+      });
+  }
 }
