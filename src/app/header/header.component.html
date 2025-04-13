@@ -1,15 +1,37 @@
 <header>
-  <h1>
-    <span class="title-an">Angeluko</span>
-    <span class="title-ka">Kabalkada</span>
-    <span class="title-year">2026</span>
-  </h1>
-  <div>
-    <anka-locale />
+  <anka-locale />
+  <owl-carousel-o [options]="customOptions">
+    @for (slide of slides(); track slide.id) {
+      <ng-template carouselSlide [id]="slide.id">
+        <div
+          class="header-bg"
+          [style.background-image]="'url(' + slide.src + ')'"
+        ></div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+  <div class="h1-container">
+    <h1>
+      <span class="title-an">Angeluko</span>
+      <span class="title-ka">Kabalkada</span>
+      <span class="title-year">2026</span>
+    </h1>
+    <div>
+      <a
+        class="form-link"
+        href="https://forms.gle/ijPbUmwbi7cRhp8R7"
+        target="_blank"
+      >
+        @if (localeService.locale() === "FR") {
+          S'inscrire
+        } @else {
+          Izena eman
+        }
+      </a>
+    </div>
+  </div>
+  <div class="countdown-container">
+    <anka-countdown [date]="date1" />
+    <anka-countdown [date]="date2" />
   </div>
 </header>
-<owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide>Slide 1</ng-template>  
-  <ng-template carouselSlide>Slide 2</ng-template>  
-  <ng-template carouselSlide>Slide 3</ng-template>  
-</owl-carousel-o>

@@ -136,31 +136,3 @@ section {
     padding-bottom: 4em;
   }
 }
-
-a.form-link {
-  background: var(--red-color);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  transition: all 0.3s ease;
-  font-size: 1.5em;
-
-  &:hover,
-  &:focus-visible {
-    background: var(--pink-color);
-    font-size: 1.7em;
-    margin: 0.75em;
-  }
-}
-div:has(a.form-link) {
-  text-align: center;
-}
-div:has(anka-countdown) {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.2em;
-}

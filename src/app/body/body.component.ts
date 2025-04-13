@@ -46,7 +46,7 @@ export interface BodySection {
 
 @Component({
   selector: 'anka-body',
-  imports: [LocalePipe, MarkdownComponent, CountdownComponent],
+  imports: [LocalePipe, MarkdownComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
   providers: [LocalePipe],
@@ -58,13 +58,15 @@ export class BodyComponent implements OnInit {
   localeService = inject(LocaleService);
 
   bodySections = signal<BodySection[]>([]);
-  date1 = new Date('2026-09-20');
-  date2 = new Date('2026-09-26');
 
   async ngOnInit() {
     const bodySections: BodySection[] = [];
     const querySnapshot = await getDocs(
-      query(collection(this.#firestore, 'body'), orderBy('order'),  where('order', '>', 0)),
+      query(
+        collection(this.#firestore, 'body'),
+        orderBy('order'),
+        where('order', '>', 0),
+      ),
     );
     querySnapshot.forEach((doc) => {
       const bodySection: BodySection = {
