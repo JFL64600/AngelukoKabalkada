@@ -8,9 +8,8 @@ describe('AdminFooterSectionDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminFooterSectionDialogComponent]
-    })
-    .compileComponents();
+      imports: [AdminFooterSectionDialogComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AdminFooterSectionDialogComponent);
     component = fixture.componentInstance;

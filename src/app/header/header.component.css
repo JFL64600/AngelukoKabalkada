@@ -113,3 +113,15 @@ anka-countdown {
     font-size: 2em;
   }
 }
+
+.countdown-container div {
+  backdrop-filter: blur(2px);
+  background-color: rgb(255 255 255 / 40%);
+  border-radius: 0.5em 0.5em 0 0;
+  padding: 0.5em 1em;
+  cursor: pointer;
+
+  @media (min-width: 500px) {
+    font-size: 1.5em;
+  }
+}
