@@ -12,7 +12,7 @@ import {
   query,
   where,
 } from '@angular/fire/firestore';
-import { LocalePipe } from "../locale/locale.pipe";
+import { LocalePipe } from '../locale/locale.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
 
@@ -25,12 +25,11 @@ export interface HeaderAction {
 
 @Component({
   selector: 'anka-header',
-  imports: [LocaleComponent, CarouselModule, CountdownComponent, LocalePipe],
+  imports: [LocaleComponent, CarouselModule, LocalePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   providers: [LocalePipe],
 })
-
 export class HeaderComponent implements OnInit {
   #firestore = inject(Firestore);
   #dialog = inject(MatDialog);
@@ -91,21 +90,21 @@ export class HeaderComponent implements OnInit {
   }
 
   openAction(index: number) {
-      const headerAction = this.headerActions()[index];
-      const dialogRef = this.#dialog.open(DialogDataExampleDialog, {
-        data: {
-          title: this.#locale.transform(headerAction, 'title'),
-          markdown: this.#locale.transform(headerAction, 'markdown'),
-          index,
-          length: this.headerActions().length,
-        },
-      });
-      dialogRef.afterClosed().subscribe((result) => {
-        if (result === 'prev') {
-          this.openAction(index - 1);
-        } else if (result === 'next') {
-          this.openAction(index + 1);
-        }
-      });
-    }
+    const headerAction = this.headerActions()[index];
+    const dialogRef = this.#dialog.open(DialogDataExampleDialog, {
+      data: {
+        title: this.#locale.transform(headerAction, 'title'),
+        markdown: this.#locale.transform(headerAction, 'markdown'),
+        index,
+        length: this.headerActions().length,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'prev') {
+        this.openAction(index - 1);
+      } else if (result === 'next') {
+        this.openAction(index + 1);
+      }
+    });
+  }
 }

@@ -35,10 +35,12 @@
       headerAction of headerActions();
       track headerAction.id;
       let headerActionIndex = $index
-      ) {
-        <div (click)="openAction(headerActionIndex)">{{ headerAction | locale: "title" }}</div>
-      }
-    
+    ) {
+      <div (click)="openAction(headerActionIndex)">
+        {{ headerAction | locale: "title" }}
+      </div>
+    }
+
     <!--
           <div>Kabalkada</div>
     <div>Nola</div>

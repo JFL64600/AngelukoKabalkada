@@ -114,7 +114,7 @@ anka-countdown {
   }
 }
 
-.countdown-container div  {
+.countdown-container div {
   backdrop-filter: blur(2px);
   background-color: rgb(255 255 255 / 40%);
   border-radius: 0.5em 0.5em 0 0;
