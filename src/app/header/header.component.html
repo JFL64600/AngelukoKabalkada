@@ -31,7 +31,19 @@
     </div>
   </div>
   <div class="countdown-container">
+    @for (
+      headerAction of headerActions();
+      track headerAction.id;
+      let headerActionIndex = $index
+      ) {
+        <div (click)="openAction(headerActionIndex)">{{ headerAction | locale: "title" }}</div>
+      }
+    
+    <!--
+          <div>Kabalkada</div>
+    <div>Nola</div>
     <anka-countdown [date]="date1" />
     <anka-countdown [date]="date2" />
+    -->
   </div>
 </header>
