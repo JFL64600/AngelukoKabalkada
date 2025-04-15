@@ -92,7 +92,7 @@ section {
 
   &:nth-of-type(1) .keywords {
     @media (min-width: 1000px) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 

@@ -14,12 +14,20 @@
     <h1>
       <span class="title-an">Angeluko</span>
       <span class="title-ka">Kabalkada</span>
-      <span class="title-year">2026</span>
+    </h1>
+    <h1>
+      <span class="title-year">
+        @if (localeService.locale() === "FR") {
+          20-26/09/2026
+        } @else {
+          2026/09/20-26
+        }
+      </span>
     </h1>
     <div>
       <a
         class="form-link"
-        href="https://forms.gle/ijPbUmwbi7cRhp8R7"
+        href="https://forms.gle/j8xh9dULvPc8BYQr6"
         target="_blank"
       >
         @if (localeService.locale() === "FR") {
