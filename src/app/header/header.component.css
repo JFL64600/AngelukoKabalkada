@@ -32,6 +32,7 @@ h1 {
   margin: 0;
   font-size: 1.5rem;
   display: inline-block;
+  font-weight: bold;
 
   @media (min-width: 400px) {
     font-size: 2rem;
@@ -51,19 +52,16 @@ h1 {
 
   .title-an {
     color: var(--grey-color);
-    font-weight: 500;
     margin-right: 0.3em;
   }
 
   .title-ka {
     color: var(--red-color);
-    font-weight: bold;
     margin-right: 0.3em;
   }
 
   .title-year {
-    color: var(--pink-color);
-    font-weight: bold;
+    color: var(--red-color);
   }
 }
 
