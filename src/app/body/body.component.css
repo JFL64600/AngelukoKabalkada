@@ -137,24 +137,12 @@ section {
   }
 }
 
-a.form-link {
-  background: var(--green-color);
-  color: white;
-  font-weight: bold;
-  display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  transition: all 0.3s ease;
+/* a.form-link {
   font-size: 1.5em;
 
   &:hover,
   &:focus-visible {
-    background: var(--pink-color);
     font-size: 1.7em;
     margin: 0.75em;
   }
-}
-div:has(a.form-link) {
-  text-align: center;
-}
+} */

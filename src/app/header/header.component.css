@@ -72,25 +72,6 @@ h1 {
   background-position: 50% 50%;
 }
 
-a.form-link {
-  background: var(--green-color);
-  color: white;
-  font-weight: bold;
-  display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  transition: all 0.3s ease;
-  font-size: 2em;
-
-  &:hover,
-  &:focus-visible {
-    background: var(--pink-color);
-    font-size: 2.2em;
-    margin: 0.8em;
-  }
-}
-
 .countdown-container {
   position: absolute;
   bottom: 0;
@@ -123,3 +104,13 @@ anka-countdown {
     font-size: 1.5em;
   }
 }
+
+/* a.form-link {
+  font-size: 2em;
+
+  &:hover,
+  &:focus-visible {
+    font-size: 2.2em;
+    margin: 0.8em;
+  }
+} */
