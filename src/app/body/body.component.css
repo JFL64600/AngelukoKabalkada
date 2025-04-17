@@ -138,7 +138,7 @@ section {
 }
 
 a.form-link {
-  background: var(--red-color);
+  background: var(--green-color);
   color: white;
   font-weight: bold;
   display: inline-block;
