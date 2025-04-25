@@ -21,6 +21,7 @@ import {
 } from '@angular/material/dialog';
 import { CountdownComponent } from '../countdown/countdown.component';
 import { LocaleService } from '../locale/locale.service';
+import { RegisterComponent } from "../register/register.component";
 
 export interface BodyKeyword {
   id: string;
@@ -46,7 +47,7 @@ export interface BodySection {
 
 @Component({
   selector: 'anka-body',
-  imports: [LocalePipe, MarkdownComponent],
+  imports: [LocalePipe, MarkdownComponent, RegisterComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
   providers: [LocalePipe],
