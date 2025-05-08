@@ -63,11 +63,11 @@ export class HeaderComponent implements OnInit {
   slides = signal([
     {
       id: 'slide1',
-      src: 'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/CA066B~1.JPG?alt=media&token=f74c6283-ce0d-41c6-8726-1cc341249e93',
+      src: 'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/CA066B~1-min.JPG?alt=media&token=0b3ea21f-1f98-415d-94ab-934684398e17',
     },
     {
       id: 'slide2',
-      src: 'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/823A6874.jpg?alt=media&token=ff04fde0-005a-44d9-bb6d-d1550f180b13',
+      src: 'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/823A6874-min.jpg?alt=media&token=83a92af3-5721-462f-a64d-a3698d201bd6',
     },
   ]);
 
