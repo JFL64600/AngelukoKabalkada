@@ -1,5 +1,11 @@
-<div>
-    <a class="form-link" href="https://forms.gle/X9c82p1qu259C8fX7" target="_blank">
-        {{ globalsTranslate | locale: "register" }}
+@if (globalsTranslate | locale: "register") {
+  <div>
+    <a
+      class="form-link"
+      href="https://forms.gle/X9c82p1qu259C8fX7"
+      target="_blank"
+    >
+      {{ globalsTranslate | locale: "register" }}
     </a>
-</div>
+  </div>
+}
