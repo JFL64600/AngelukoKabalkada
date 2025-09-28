@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { BodyComponent } from '../body/body.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
+import { VideoComponent } from '../video/video.component';
 
 @Component({
   selector: 'anka-main',
-  imports: [HeaderComponent, BodyComponent, FooterComponent],
+  standalone: true,
+  imports: [HeaderComponent, VideoComponent, BodyComponent, FooterComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
 })
