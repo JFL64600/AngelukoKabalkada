@@ -105,6 +105,16 @@ anka-countdown {
   }
 }
 
+.header-actions a {
+  text-decoration: none;
+  color: var(--red-color);
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}
+
 /* a.form-link {
   font-size: 2em;
 
