@@ -1,0 +1,12 @@
+.help-us-container {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1000px) {
+    flex-direction: row;
+  }
+
+  > div {
+    flex: 1;
+  }
+}

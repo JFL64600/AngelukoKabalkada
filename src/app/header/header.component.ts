@@ -26,13 +26,7 @@ export interface HeaderAction {
 
 @Component({
   selector: 'anka-header',
-  imports: [
-    LocaleComponent,
-    CarouselModule,
-    LocalePipe,
-    RegisterComponent,
-    TranslocoDirective,
-  ],
+  imports: [LocaleComponent, CarouselModule, TranslocoDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   providers: [LocalePipe],
