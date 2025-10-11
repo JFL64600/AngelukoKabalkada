@@ -24,9 +24,9 @@
       <span class="title-an">Angeluko</span>
       <span class="title-ka">Kabalkada</span>
     </h1>
-    <anka-register></anka-register>
+    <!--<anka-register></anka-register>-->
   </div>
-  <div class="countdown-container">
+  <!--<div class="countdown-container">
     @for (
       headerAction of headerActions();
       track headerAction.id;
@@ -35,13 +35,17 @@
       <div (click)="openAction(headerActionIndex)">
         {{ headerAction | locale: "title" }}
       </div>
-    }
+    }-->
 
-    <!--
+  <!--
           <div>Kabalkada</div>
     <div>Nola</div>
     <anka-countdown [date]="date1" />
     <anka-countdown [date]="date2" />
     -->
+  <!--</div>-->
+  <div class="header-actions">
+    <div (click)="openAction(1)">Cavalcade</div>
+    <a href="#help-us">Nous aider</a>
   </div>
 </header>
