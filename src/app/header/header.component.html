@@ -10,14 +10,10 @@
       </ng-template>
     }
   </owl-carousel-o>
-  <div class="h1-container">
+  <div class="h1-container" *transloco="let t; prefix: 'header'">
     <h1>
       <span class="title-year">
-        @if (localeService.locale() === "FR") {
-          20-26/09/2026
-        } @else {
-          2026/09/20-26
-        }
+        {{ t("dates") }}
       </span>
     </h1>
     <h1>

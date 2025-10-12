@@ -2,7 +2,6 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { LocaleComponent } from '../locale/locale.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { LocaleService } from '../locale/locale.service';
-import { CountdownComponent } from '../countdown/countdown.component';
 
 import {
   collection,
@@ -15,6 +14,8 @@ import {
 import { LocalePipe } from '../locale/locale.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
+import { RegisterComponent } from '../register/register.component';
+import { TranslocoDirective } from '@jsverse/transloco';
 
 export interface HeaderAction {
   id: string;
@@ -25,7 +26,7 @@ export interface HeaderAction {
 
 @Component({
   selector: 'anka-header',
-  imports: [LocaleComponent, CarouselModule],
+  imports: [LocaleComponent, CarouselModule, LocalePipe, TranslocoDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   providers: [LocalePipe],
