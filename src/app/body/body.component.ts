@@ -21,7 +21,7 @@ import {
 } from '@angular/material/dialog';
 import { CountdownComponent } from '../countdown/countdown.component';
 import { LocaleService } from '../locale/locale.service';
-import { RegisterComponent } from "../register/register.component";
+import { RegisterComponent } from '../register/register.component';
 
 export interface BodyKeyword {
   id: string;

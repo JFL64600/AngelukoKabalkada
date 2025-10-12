@@ -15,7 +15,7 @@ import {
 import { LocalePipe } from '../locale/locale.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
-import { RegisterComponent } from "../register/register.component";
+import { RegisterComponent } from '../register/register.component';
 
 export interface HeaderAction {
   id: string;

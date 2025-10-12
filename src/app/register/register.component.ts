@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { collection, Firestore, getDocs, query } from '@angular/fire/firestore';
-import { LocalePipe } from "../locale/locale.pipe";
+import { LocalePipe } from '../locale/locale.pipe';
 
 export interface GlobalsTranslate {
   id: string;
@@ -22,9 +22,7 @@ export class RegisterComponent implements OnInit {
 
   async ngOnInit() {
     const querySnapshot = await getDocs(
-      query(
-        collection(this.#firestore, 'globals'),
-      ),
+      query(collection(this.#firestore, 'globals')),
     );
     this.globalsTranslate = {
       id: querySnapshot.docs[0].id,
