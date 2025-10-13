@@ -14,7 +14,6 @@ import {
 import { LocalePipe } from '../locale/locale.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
-import { RegisterComponent } from '../register/register.component';
 import { TranslocoDirective } from '@jsverse/transloco';
 
 export interface HeaderAction {
@@ -107,5 +106,12 @@ export class HeaderComponent implements OnInit {
         this.openAction(index + 1);
       }
     });
+  }
+
+  scrollToHelpUs() {
+    const element = document.getElementById('help-us');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
