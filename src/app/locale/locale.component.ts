@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { TranslocoService } from '@jsverse/transloco';
 import { LocaleService } from './locale.service';
 
 @Component({
@@ -8,10 +9,16 @@ import { LocaleService } from './locale.service';
   styleUrl: './locale.component.css',
 })
 export class LocaleComponent {
+  #translocoService = inject(TranslocoService);
   localeService = inject(LocaleService);
 
-  changeLanguage(language: 'FR' | 'EUS') {
-    this.localeService.locale.set(language);
-    localStorage.setItem('locale', language);
+  changeLanguage(language: 'eus' | 'fr') {
+    this.#translocoService.setActiveLang(language);
+    this.localeService.locale.set(language.toUpperCase() as 'FR' | 'EUS');
+    localStorage.setItem('locale', language.toUpperCase() as 'FR' | 'EUS');
+  }
+
+  getCurrentLanguage(): string {
+    return this.#translocoService.getActiveLang();
   }
 }

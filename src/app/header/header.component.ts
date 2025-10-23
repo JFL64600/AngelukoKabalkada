@@ -16,6 +16,7 @@ import { LocalePipe } from '../locale/locale.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
 import { RegisterComponent } from '../register/register.component';
+import { TranslocoDirective } from '@jsverse/transloco';
 
 export interface HeaderAction {
   id: string;
@@ -26,7 +27,13 @@ export interface HeaderAction {
 
 @Component({
   selector: 'anka-header',
-  imports: [LocaleComponent, CarouselModule, LocalePipe, RegisterComponent],
+  imports: [
+    LocaleComponent,
+    CarouselModule,
+    LocalePipe,
+    RegisterComponent,
+    TranslocoDirective,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   providers: [LocalePipe],
