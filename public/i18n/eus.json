@@ -1,2 +1,14 @@
-{"header": {"dates": "2026ko irailaren 20a eta 26a"},
-"dialog": {"previous": "Aurrekoa", "next": "Jarraian", "close": "Itxi"}}
+{
+  "header": {
+    "dates": "2026ko irailaren 20a eta 26a",
+    "cavalcade": "Kabalkada",
+    "help-us": "Lagundu iezaguzu"
+  },
+  "help-us": {
+    "title": "Lagundu iezaguzu",
+    "individuals": "Partikuliarrak",
+    "businesses": "Enpresak",
+    "ask-more-infos": "Jarri gurekin harremanetan informazio gehiagorako"
+  },
+  "dialog": { "previous": "Aurrekoa", "next": "Jarraian", "close": "Itxi" }
+}
