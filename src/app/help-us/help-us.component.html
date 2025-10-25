@@ -1,8 +1,8 @@
-<section>
-  <h2 id="help-us">Nous aider</h2>
+<section *transloco="let t; prefix: 'help-us'">
+  <h2 id="help-us">{{ t("title") }}</h2>
   <div class="help-us-container">
     <div>
-      <h3>Particuliers</h3>
+      <h3>{{ t("individuals") }}</h3>
       <iframe
         allowtransparency="true"
         src="https://www.helloasso.com/associations/angeluko-kabalkada/formulaires/1/widget-bouton"
@@ -10,14 +10,17 @@
       ></iframe>
     </div>
     <div>
-      <h3>Entreprises</h3>
-      <a
-        class="form-link"
-        href="https://forms.gle/gCdNRg5NowYb2hec6"
-        target="_blank"
-      >
-        Demander plus d'informations
-      </a>
+      <h3>{{ t("businesses") }}</h3>
+      <div style="display: flex; justify-content: center">
+        <a
+          mat-flat-button
+          color="primary"
+          href="https://forms.gle/gCdNRg5NowYb2hec6"
+          target="_blank"
+        >
+          {{ t("ask-more-infos") }}
+        </a>
+      </div>
     </div>
   </div>
 </section>

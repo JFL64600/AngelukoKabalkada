@@ -1,1 +1,13 @@
-{"header": {"dates": "20 et 26 septembre 2026"}}
+{
+  "header": {
+    "dates": "20 et 26 septembre 2026",
+    "cavalcade": "Cavalcade",
+    "help-us": "Nous aider"
+  },
+  "help-us": {
+    "title": "Comment nous aider ?",
+    "individuals": "Particuliers",
+    "businesses": "Entreprises",
+    "ask-more-infos": "Contactez-nous pour plus d'informations"
+  }
+}

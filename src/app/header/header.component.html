@@ -1,4 +1,4 @@
-<header>
+<header *transloco="let t; prefix: 'header'">
   <anka-locale />
   <owl-carousel-o [options]="customOptions">
     @for (slide of slides(); track slide.id) {
@@ -10,7 +10,7 @@
       </ng-template>
     }
   </owl-carousel-o>
-  <div class="h1-container" *transloco="let t; prefix: 'header'">
+  <div class="h1-container">
     <h1>
       <span class="title-year">
         {{ t("dates") }}
@@ -41,7 +41,7 @@
     -->
   <!--</div>-->
   <div class="header-actions">
-    <div (click)="openAction(1)">Cavalcade</div>
-    <div (click)="scrollToHelpUs()">Nous aider</div>
+    <div (click)="openAction(1)">Cavalcade{{ t("cavalcade") }}</div>
+    <div (click)="scrollToHelpUs()">Nous aider {{ t("help-us") }}</div>
   </div>
 </header>
