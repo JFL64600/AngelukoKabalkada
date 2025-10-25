@@ -2,7 +2,6 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { LocaleComponent } from '../locale/locale.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { LocaleService } from '../locale/locale.service';
-import { CountdownComponent } from '../countdown/countdown.component';
 
 import {
   collection,
