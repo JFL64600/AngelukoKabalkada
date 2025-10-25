@@ -2,11 +2,11 @@
   "header": {
     "dates": "2026ko irailaren 20a eta 26a",
     "cavalcade": "Kabalkada",
-    "help-us": "Lagundu iezaguzu"
+    "help-us": "Lagundu"
   },
   "help-us": {
-    "title": "Lagundu iezaguzu",
-    "individuals": "Partikuliarrak",
+    "title": "Lagundu",
+    "individuals": "Bereziak",
     "businesses": "Enpresak",
     "ask-more-infos": "Jarri gurekin harremanetan informazio gehiagorako"
   }
