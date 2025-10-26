@@ -7,22 +7,9 @@
   "help-us": {
     "title": "Lagundu",
     "individuals": "Bereziak",
-    "individuals-line1": "2026ko Kabalkada elkarte-proiektu paregabea da, eta jada urtebete baino gehiago daramagu mobilizatzen eta prestatzen.",
-    "individuals-line2": "Dantzariak, musikariak, jostunak, antzezleak eta familiak eskuz esku lanean ari gira, 300 lagun baino gehiago bilduko dituen ikuskizun handi hau oholtzan biziarazteko.",
-    "individuals-line3": "“Angeluko Kabalkada” elkarteak sustatua, proiektu hau belaunaldien arteko eta lan kolektibo baten fruitua da, euskal kulturan errotua eta guztiontzat irekia.",
-    "individuals-line4": "Halako ekitaldi batek aurrekontu handia eskatzen du: apainketak, jantziak, logistika, laguntzaileak...",
-    "individuals-line5": "Zuen dohaintzari esker, abentura kolektibo hau biziarazten ahal dugu eta euskal kulturari benetako sostengua ematen diozue :  hizkuntza, dantza, eta transmisio arloan baita mobilizatu diren komunitatea lagunduz.",
+    "individuals-markdown": "2026ko Kabalkada elkarte-proiektu paregabea da, eta jada urtebete baino gehiago daramagu mobilizatzen eta prestatzen.\n\nDantzariak, musikariak, jostunak, antzezleak eta familiak eskuz esku lanean ari gira, 300 lagun baino gehiago bilduko dituen ikuskizun handi hau oholtzan biziarazteko.\n\n“Angeluko Kabalkada” elkarteak sustatua, proiektu hau belaunaldien arteko eta lan kolektibo baten fruitua da, euskal kulturan errotua eta guztiontzat irekia.\n\nHalako ekitaldi batek aurrekontu handia eskatzen du: apainketak, jantziak, logistika, laguntzaileak...\n\nZuen dohaintzari esker, abentura kolektibo hau biziarazten ahal dugu eta euskal kulturari benetako sostengua ematen diozue :  hizkuntza, dantza, eta transmisio arloan baita mobilizatu diren komunitatea lagunduz.",
     "businesses": "Enpresak",
-    "businesses-introduction-line1": "2026an, Angeluarrak dantza taldeak bere 60. urteurrena ospatuko du ekitaldi berezi batekin : Angeluko Kabalkada.",
-    "businesses-introduction-line2": "Dantza, musika, kantua eta antzerkia uztartzen dituen ikuskizun handi honek, Lapurdi eta Nafarroa Behereko tradizioetan sustraitua, ehunka boluntario bilduko ditu eta jende ugari erakarriko du bi emanalditan (2026ko irailaren 20an eta 26an).",
-    "businesses-paragraph-first-title": "Kabalkada ez da ekitaldi artistiko hutsa:",
-    "businesses-paragraph-first-line1": "Tokiko kohesiorako motore bat da, herritarrak, elkarteak, eskolak eta eragile ekonomikoak proiektu komun baten inguruan mobilizatuz,",
-    "businesses-paragraph-first-line2": "Belaunaldi guztien arteko transmisio kulturalerako tresna bat da, euskaldunak zein erdaldunak barne,",
-    "businesses-paragraph-first-line3": "Angelu eta Euskal Herri mailan ikusgarritasun handiko hitzordu bat da, komunikazio zabala izango duena bai lehenago bai egunean bertan.",
-    "businesses-paragraph-second-title": "Lurraldeko enpresa gisa, proiektu hau babestea honakoa da:",
-    "businesses-paragraph-second-line1": "Tokiko bizitza kulturala eta sozialarekiko zure konpromisoa erakustea,",
-    "businesses-paragraph-second-line2": "Zure irudia zentzudun eta bateratzaile den ekitaldi bati lotzea,",
-    "businesses-paragraph-second-line3": "Publiko zabala eta askotarikoa den aurrean ikusgarritasun handia lortzea.",
+    "businesses-markdown": "2026an, Angeluarrak dantza taldeak bere 60. urteurrena ospatuko du ekitaldi berezi batekin : Angeluko Kabalkada.\n\nDantza, musika, kantua eta antzerkia uztartzen dituen ikuskizun handi honek, Lapurdi eta Nafarroa Behereko tradizioetan sustraitua, ehunka boluntario bilduko ditu eta jende ugari erakarriko du bi emanalditan (2026ko irailaren 20an eta 26an).\n \nKabalkada ez da ekitaldi artistiko hutsa:\n- Tokiko kohesiorako motore bat da, herritarrak, elkarteak, eskolak eta eragile ekonomikoak proiektu komun baten inguruan mobilizatuz,\n- Belaunaldi guztien arteko transmisio kulturalerako tresna bat da, euskaldunak zein erdaldunak barne,\n- Angelu eta Euskal Herri mailan ikusgarritasun handiko hitzordu bat da, komunikazio zabala izango duena bai lehenago bai egunean bertan.\n \nLurraldeko enpresa gisa, proiektu hau babestea honakoa da:\n- Tokiko bizitza kulturala eta sozialarekiko zure konpromisoa erakustea,\n- Zure irudia zentzudun eta bateratzaile den ekitaldi bati lotzea,\n- Publiko zabala eta askotarikoa den aurrean ikusgarritasun handia lortzea.",
     "ask-more-infos": "Jarri gurekin harremanetan informazio gehiagorako"
   }
 }
