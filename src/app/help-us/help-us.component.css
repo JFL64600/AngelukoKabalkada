@@ -10,3 +10,8 @@
     flex: 1;
   }
 }
+
+.help-us-container > div {
+  margin-left: 1em;
+  margin-right: 1em;
+}
