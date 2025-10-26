@@ -6,7 +6,7 @@ import { TranslocoService } from '@jsverse/transloco';
 })
 export class LocaleService {
   #translocoService = inject(TranslocoService);
-  locale = signal<'FR' | 'EUS'>('FR');
+  locale = signal<'FR' | 'EUS'>('EUS');
 
   constructor() {
     const locale = localStorage.getItem('locale') as 'FR' | 'EUS';
