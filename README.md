@@ -2,6 +2,20 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
 
+## Markdown to JSON string conversion
+
+To convert a markdown text into a JSON string suitable for translation files, you can use the following approach:
+
+- Create the markdown in https://markdownlivepreview.com/ or another editor.
+- Copy your markdown text.
+- Use the following JavaScript snippet to replace all line breaks with `\n`:
+
+  ```js
+  `your markdown text`.replace(/\r?\n/g, "\n");
+  ```
+
+- Paste the resulting string into your translation file.
+
 ## Development server
 
 To start a local development server, run:
