@@ -1,3 +1,7 @@
+section {
+  background-color: var(--grey-color);
+}
+
 .help-us-container {
   display: flex;
   flex-direction: column;
