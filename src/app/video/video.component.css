@@ -4,3 +4,7 @@
   text-align: center;
   padding: 2em 0;
 }
+
+iframe {
+  max-width: 100%;
+}
