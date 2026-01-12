@@ -4,11 +4,16 @@
     <div>
       <h3>{{ t("individuals") }}</h3>
       <markdown [data]="t('individuals-markdown')"></markdown>
-      <iframe
-        allowtransparency="true"
-        src="https://www.helloasso.com/associations/angeluko-kabalkada/formulaires/1/widget-bouton"
-        class="helloasso-iframe"
-      ></iframe>
+      <div class="button-container">
+        <a
+          mat-flat-button
+          color="primary"
+          href="https://www.helloasso.com/associations/angeluko-kabalkada/formulaires/1"
+          target="_blank"
+        >
+          {{ t("donation") }}
+        </a>
+      </div>
     </div>
     <div>
       <h3>{{ t("businesses") }}</h3>

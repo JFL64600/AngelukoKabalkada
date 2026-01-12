@@ -13,12 +13,6 @@
   }
 }
 
-.helloasso-iframe {
-  width: 100%;
-  height: 70px;
-  border: none;
-}
-
 .button-container {
   display: flex;
   justify-content: center;
