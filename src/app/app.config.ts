@@ -30,7 +30,6 @@ export const appConfig: ApplicationConfig = {
         messagingSenderId: '841602402665',
       }),
     ),
-    provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     provideMarkdown(),
     provideHttpClient(),

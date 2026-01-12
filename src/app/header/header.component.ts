@@ -3,14 +3,6 @@ import { LocaleComponent } from '../locale/locale.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { LocaleService } from '../locale/locale.service';
 
-import {
-  collection,
-  Firestore,
-  getDocs,
-  orderBy,
-  query,
-  where,
-} from '@angular/fire/firestore';
 import { LocalePipe } from '../locale/locale.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
@@ -20,6 +12,8 @@ export interface HeaderAction {
   id: string;
   title_EUS: string;
   title_FR: string;
+  markdown_EUS: string;
+  markdown_FR: string;
   order?: number;
 }
 
@@ -30,13 +24,33 @@ export interface HeaderAction {
   styleUrl: './header.component.css',
   providers: [LocalePipe],
 })
-export class HeaderComponent implements OnInit {
-  #firestore = inject(Firestore);
+export class HeaderComponent {
   #dialog = inject(MatDialog);
   #locale = inject(LocalePipe);
 
   localeService = inject(LocaleService);
-  headerActions = signal<HeaderAction[]>([]);
+  headerActions = signal<HeaderAction[]>([
+    {
+      id: '1',
+      markdown_FR:
+        'Il s’agit d’une représentation populaire de grande envergure regroupant tout un village par la danse, théâtre, musique… Sa structure et son montage sont codifiés et pour vous aider à mieux comprendre, une page explicative et des documents sont mis à disposition sur le site internet d’Angeluko Kabalkada en cliquant ici.',
+      title_FR: 'Calvalcade',
+      order: 1,
+      markdown_EUS:
+        'Kabalkada bat herriko antzerki, dantza, musika... elkartzen dituen ikuskizun handia da. Bere egitura eta muntaketak kodifikaturik dira. Horren hobeki ulertzeko, azalpen orri bat eta dokumentuak eskuragarri dira Angeluko Kabalkadaren webgunean, hemen klik eginez.',
+      title_EUS: 'Kabalkada',
+    },
+    {
+      id: '2',
+      order: 2,
+      markdown_FR:
+        'Une cavalcade est un moment singulier dans la vie d’une communauté et il demande un investissement à la hauteur de l’enjeu. Cela représentera un an de préparation, de répétitions, d’écriture etc. et l’engagement de chacun doit être entier et régulier. Des calendriers et des dates fixes seront établies durant l’été afin de permettre à chacun de s’organiser.',
+      title_EUS: 'Nola?',
+      title_FR: 'Comment ?',
+      markdown_EUS:
+        'Kabalkada une berezia da komunitate baten bizian, eta erronkaren araberako engaiamendua  eskatzen du. Horrek urte bateko prestaketa, errepikapen, idazkera eta abar ekarriko ditu, eta bakoitzaren engaiamenduak osoak eta erregularrak izan behar dute. Egutegiak eta data finkoak udan finkatuko dira, bakoitza antola dadin.',
+    },
+  ]);
 
   date1 = new Date('2026-09-20');
   date2 = new Date('2026-09-26');
@@ -69,25 +83,6 @@ export class HeaderComponent implements OnInit {
       src: 'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/823A6874-min.jpg?alt=media&token=83a92af3-5721-462f-a64d-a3698d201bd6',
     },
   ]);
-
-  async ngOnInit() {
-    const headerActions: HeaderAction[] = [];
-    const querySnapshot = await getDocs(
-      query(
-        collection(this.#firestore, 'header', 'actions', 'footer'),
-        orderBy('order'),
-        where('order', '>', 0),
-      ),
-    );
-    querySnapshot.forEach((doc) => {
-      const headerAction: HeaderAction = {
-        id: doc.id,
-        ...(doc.data() as any),
-      };
-      headerActions.push(headerAction);
-    });
-    this.headerActions.set(headerActions);
-  }
 
   openAction(index: number) {
     const headerAction = this.headerActions()[index];

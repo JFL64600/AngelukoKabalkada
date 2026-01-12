@@ -12,7 +12,6 @@ import {
   MatDialogClose,
 } from '@angular/material/dialog';
 import { LocaleService } from '../locale/locale.service';
-import { RegisterComponent } from '../register/register.component';
 import { TranslocoDirective } from '@jsverse/transloco';
 
 export interface BodyKeyword {
@@ -35,7 +34,7 @@ export interface BodySection {
 
 @Component({
   selector: 'anka-body',
-  imports: [LocalePipe, MarkdownComponent, RegisterComponent],
+  imports: [LocalePipe, MarkdownComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
   providers: [LocalePipe],
