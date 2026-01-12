@@ -10,16 +10,25 @@
       </ng-template>
     }
   </owl-carousel-o>
-  <div class="h1-container">
-    <h1>
-      <span class="title-year">
-        {{ t("dates") }}
-      </span>
-    </h1>
-    <h1>
-      <span class="title-an">Angeluko</span>
-      <span class="title-ka">Kabalkada</span>
-    </h1>
+  <div class="header-container" *transloco="let t; prefix: 'header'">
+    <div class="dates">
+      <div>
+        <span>20/09/26</span>
+        <span>{{ t("hardoy") }}</span>
+      </div>
+      <div>
+        <span>26/09/26</span>
+        <span>{{ t("quintaou") }}</span>
+      </div>
+    </div>
+
+    <img
+      class="img-title"
+      src="images/title.png"
+      alt="Angeluko Kabalkada"
+      width="400"
+      height="128"
+    />
     <!--<anka-register></anka-register>-->
   </div>
   <!--<div class="countdown-container">
