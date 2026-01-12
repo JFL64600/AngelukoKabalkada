@@ -1,7 +1,7 @@
 <main>
   @for (
     bodySection of bodySections();
-    track bodySection.id;
+    track $index;
     let sectionIndex = $index
   ) {
     <section>
@@ -14,7 +14,7 @@
         <div class="keywords">
           @for (
             keyword of bodySection.keywords;
-            track keyword.id;
+            track $index;
             let keywordIndex = $index
           ) {
             <button (click)="openKeyword(bodySection.keywords, keywordIndex)">
@@ -33,5 +33,4 @@
       }
     </section>
   }
-  <anka-register></anka-register>
 </main>

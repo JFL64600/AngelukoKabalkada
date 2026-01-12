@@ -13,5 +13,6 @@
     "businesses": "Entreprises",
     "businesses-markdown": "En 2026, le groupe de danse <b>Angeluarrak</b> fêtera ses 60 ans avec un événement exceptionnel : <b>la Cavalcade d’Anglet</b>.\n\nCe grand spectacle vivant mêlant danse, musique, chant et théâtre, ancré dans les traditions du Labourd et de la Basse-Navarre, réunira <b>plusieurs centaines de bénévoles</b> et attirera un large public lors de <b>deux représentations</b> (20 et 26 septembre 2026).\n\nLa Cavalcade est bien plus qu’un événement artistique :\n- <b>Un moteur de cohésion locale</b> en mobilisant habitants, associations, écoles et acteurs économiques autour d’un projet commun,\n- <b>Un vecteur de transmission culturelle</b> auprès de toutes les générations, qu’elles soient bascophones ou non,\n- <b>Un rendez-vous à forte visibilité</b> sur Anglet et le Pays Basque, avec une communication importante en amont et le jour J.\n\nEn tant qu’entreprise du territoire, soutenir ce projet, c’est :\n- Affirmer votre engagement pour la <b>vie culturelle et sociale locale</b>,\n- Associer votre image à <b>un événement fédérateur et porteur de sens</b>,\n- Bénéficier d’une <b>visibilité forte</b> auprès d’un public large et diversifié.",
     "ask-more-infos": "Contactez-nous"
-  }
+  },
+  "dialog": { "previous": "Précédent", "next": "Suivant", "close": "Fermer" }
 }

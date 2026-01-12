@@ -13,5 +13,6 @@
     "businesses": "Enpresak",
     "businesses-markdown": "2026an, <b>Angeluarrak</b> dantza taldeak bere 60. urteurrena ospatuko du ekitaldi berezi batekin : <b>Angeluko Kabalkada</b>.\n\nDantza, musika, kantua eta antzerkia uztartzen dituen ikuskizun handi honek, Lapurdi eta Nafarroa Behereko tradizioetan sustraitua, <b>ehunka boluntario bilduko ditu</b> eta jende ugari erakarriko du <b>bi emanalditan</b> (2026ko irailaren 20an eta 26an).\n\nKabalkada ez da ekitaldi artistiko hutsa:\n- <b>Tokiko kohesiorako motore bat da</b>, herritarrak, elkarteak, eskolak eta eragile ekonomikoak proiektu komun baten inguruan mobilizatuz,\n- <b>Belaunaldi guztien arteko transmisio kulturalerako tresna bat da</b>, euskaldunak zein erdaldunak barne,\n- <b>Angelu eta Euskal Herri mailan ikusgarritasun handiko hitzordu bat da</b>, komunikazio zabala izango duena bai lehenago bai egunean bertan.\n\n\nLurraldeko enpresa gisa, proiektu hau babestea honakoa da:\n- <b>Tokiko bizitza kulturala eta sozialarekiko</b> zure konpromisoa erakustea,\n- Zure <b>irudia zentzudun eta bateratzaile</b> den ekitaldi bati lotzea,\n- Publiko zabala eta askotarikoa den <b>aurrean ikusgarritasun handia lortzea</b>.",
     "ask-more-infos": "Harremanetan sartu"
-  }
+  },
+  "dialog": { "previous": "Aurrekoa", "next": "Jarraian", "close": "Itxi" }
 }

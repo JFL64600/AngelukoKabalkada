@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background-color: var(--grey-color);
+  background-color: var(--bg-color-main);
   text-align: center;
   padding: 2em 0;
 }
