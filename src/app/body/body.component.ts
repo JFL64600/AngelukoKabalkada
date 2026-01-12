@@ -84,7 +84,7 @@ export class BodyComponent {
         },
       ],
     },
-    {
+    /*{
       title_EUS: 'Postuak',
       title_FR: 'Les postes',
       keywords: [
@@ -145,7 +145,7 @@ export class BodyComponent {
             'Une cavalcade demeure un grand rassemblement festif : derrière le comptoir, à la billetterie, création de décors, ou encore au montage/démontage : il y a besoin de tous (bricoleurs, ou pas !). ',
         },
       ],
-    },
+    },*/
   ]);
 
   openKeyword(keywords: any[], index: number) {
