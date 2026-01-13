@@ -149,7 +149,6 @@ export class BodyComponent {
 
   openKeyword(keywords: any[], index: number) {
     const keyword = keywords[index];
-    console.log(keyword);
     const dialogRef = this.#dialog.open(DialogDataExampleDialog, {
       data: {
         title: this.#locale.transform(keyword, 'card'),
@@ -159,7 +158,6 @@ export class BodyComponent {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
       if (result === 'prev') {
         this.openKeyword(keywords, index - 1);
       } else if (result === 'next') {

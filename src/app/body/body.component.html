@@ -19,7 +19,10 @@
           ) {
             <button (click)="openKeyword(bodySection.keywords, keywordIndex)">
               @if (keyword.imageUrl) {
-                <img src="{{ keyword.imageUrl }}" />
+                <img
+                  src="{{ keyword.imageUrl }}"
+                  alt="{{ keyword | locale: 'card' }}"
+                />
               }
               {{ keyword | locale: "card" }}
             </button>
