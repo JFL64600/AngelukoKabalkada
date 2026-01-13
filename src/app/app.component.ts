@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MainComponent } from './main/main.component';
 
 @Component({
   selector: 'anka-root',
-  imports: [RouterOutlet],
+  imports: [MainComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
