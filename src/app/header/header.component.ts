@@ -76,11 +76,11 @@ export class HeaderComponent {
   slides = signal([
     {
       id: 'slide1',
-      src: 'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/CA066B~1-min.JPG?alt=media&token=0b3ea21f-1f98-415d-94ab-934684398e17',
+      src: 'images/slide1.avif',
     },
     {
       id: 'slide2',
-      src: 'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/823A6874-min.jpg?alt=media&token=83a92af3-5721-462f-a64d-a3698d201bd6',
+      src: 'images/slide2.avif',
     },
   ]);
 

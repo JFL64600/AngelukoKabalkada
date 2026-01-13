@@ -55,16 +55,14 @@ export class BodyComponent {
           card_FR: '2026',
           markdown_FR:
             'En **2026**, le groupe **Angeluarrak** fêtera ses **60 ans** d’existence à Anglet. En 60 ans, le groupe a marqué notre ville par sa présence à différentes occasions. De même, il a vu passé par les terres de Choisy, de nombreuses familles Angeluar, venues s’investir dans la culture et l’associatif… Parce qu’au-delà de ses activités, **Angeluarrak** est aussi, comme de nombreuses associations, porteur de valeurs et d’engagement auprès de tous.',
-          imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/2026.jpg?alt=media&token=575a6198-811d-48c0-89ad-dc4970eddfa7',
+          imageUrl: 'images/2026.webp',
           card_EUS: '2026',
           markdown_EUS:
             '**2026**. urtean, **Angeluarrak** taldeak **60 urte** beteko ditu Angelun. 60 urtez, taldeak gure hiria markatu du hainbat ekitaldietan parte hartuz. Gainera, taldeak Choisy-ko lurraldeetatik Angeluar familia anitz pasatzen ikusi ditu, kultura eta elkartean inplikatzeko etorriak… Izan ere, bere jarduerez gain, **Angeluarrak**, beste hainbat elkarte bezala, balio eta engaiamendu eramaile da.',
         },
         {
           card_EUS: 'Angeluarrak',
-          imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/angeluarrak.jpg?alt=media&token=f5117d74-ec21-4ce4-b3e2-c134937e1018',
+          imageUrl: 'images/angeluarrak.webp',
           markdown_EUS:
             'Azken urteetan, taldeak misio berri bat hartu du: dantza bere jatorrizko tokian ezartzea, karrikan eta plazetan, lehentasunez ukanik nagusiki,  transmisioaren ardura. Horretarako, lana funtsezko uneetan zentratu  da: trukaketak, partekatze momentuak, besta eta elkarbizitza garaiak, sinbolismo eta emozioz beterik. Momentu horiek, usaian erritualak deitzen direnak, solstizioen inguruan kokatzen dira (Olentzeroren etorrera neguan, eta Donibaneko Suak udan) baita ihauteri denboraldian, gehiengoarekin partekaturik.',
           card_FR: 'Angeluarrak',
@@ -72,8 +70,7 @@ export class BodyComponent {
             'Ces dernières années, le groupe s’est donné cette nouvelle mission de remettre la danse à sa place d’origine, dans la rue et sur les places, et tout cela avec le souci premier et prioritaire de la transmission. Pour se faire, le travail s’est axé sur les moments essentiels : les temps d’échanges, de partage, de fêtes et de convivialité mais aussi forts de symboliques et d’émotions. Ces temps-là, nommés couramment rituels, se fixe autour des solstices (venue d’Olentzero en hivers, et Donibaneko Suak en été) mais aussi le temps des carnavals, partagés avec le plus grand nombre.',
         },
         {
-          imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/angeluko-kabalkada.firebasestorage.app/o/donibaneko-suak.jpg?alt=media&token=d9f562dc-40bd-45b5-bdec-86b303cd1dd3',
+          imageUrl: 'images/donibaneko-suak.webp',
           card_EUS: 'Dinamika',
           card_FR: 'Dynamique',
           markdown_FR:
