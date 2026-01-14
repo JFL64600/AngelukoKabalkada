@@ -6,20 +6,14 @@ import { from } from 'rxjs';
 export class TranslocoHttpLoader implements TranslocoLoader {
   getTranslation(lang: string) {
     return from(
-      fetch(`/i18n/${lang}.json`)
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(
-              `Failed to load translation: ${res.status} ${res.statusText}`
-            );
-          }
-          return res.json() as Translation;
-        })
-        .catch((error) => {
+      fetch(`/i18n/${lang}.json`).then((res) => {
+        if (!res.ok) {
           throw new Error(
-            `Translation loading error for "${lang}": ${error.message}`
+            `Failed to load translation: ${res.status} ${res.statusText}`
           );
-        })
+        }
+        return res.json() as Translation;
+      })
     );
   }
 }
