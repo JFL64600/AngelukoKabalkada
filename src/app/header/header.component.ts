@@ -1,12 +1,24 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { LocaleComponent } from '../locale/locale.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { LocaleService } from '../locale/locale.service';
 
 import { LocalePipe } from '../locale/locale.pipe';
-import { MatDialog } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogContent,
+  MatDialogClose,
+} from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
 import { TranslocoDirective } from '@jsverse/transloco';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 export interface HeaderAction {
   id: string;
@@ -84,6 +96,15 @@ export class HeaderComponent {
     },
   ]);
 
+  constructor() {
+    afterNextRender(() => {
+      this.openImageDialog();
+      setTimeout(() => {
+        this.#dialog.closeAll();
+      }, 10000);
+    });
+  }
+
   openAction(index: number) {
     const headerAction = this.headerActions()[index];
     const dialogRef = this.#dialog.open(DialogDataExampleDialog, {
@@ -103,6 +124,10 @@ export class HeaderComponent {
     });
   }
 
+  openImageDialog() {
+    this.#dialog.open(ImageDialog);
+  }
+
   scrollToHelpUs() {
     const element = document.getElementById('help-us');
     if (element) {
@@ -110,3 +135,36 @@ export class HeaderComponent {
     }
   }
 }
+
+@Component({
+  selector: 'image-dialog',
+  template: `
+    <div class="image-dialog-container">
+      <img
+        src="images/angeluko-kabalkada.webp"
+        alt="Angeluko Kabalkada"
+        width="560"
+        height="792"
+        class="dialog-image"
+      />
+    </div>
+  `,
+  styles: [
+    `
+      .image-dialog-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dialog-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    `,
+  ],
+  imports: [MatIconModule, MatButtonModule],
+})
+export class ImageDialog {}
