@@ -8,6 +8,10 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     // Sanitize language parameter to prevent path traversal
     const sanitizedLang = lang.replace(/[^a-zA-Z0-9_-]/g, '');
     
+    if (!sanitizedLang) {
+      throw new Error(`Invalid language code: "${lang}"`);
+    }
+    
     return from(
       fetch(`/i18n/${sanitizedLang}.json`).then((res) => {
         if (!res.ok) {
