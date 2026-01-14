@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Translation, TranslocoLoader } from '@jsverse/transloco';
-import { from } from 'rxjs';
+import { from, throwError } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
@@ -9,7 +9,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     const sanitizedLang = lang.replace(/[^a-zA-Z0-9_-]/g, '');
     
     if (!sanitizedLang) {
-      throw new Error(`Invalid language code: "${lang}"`);
+      return throwError(() => new Error(`Invalid language code: "${lang}"`));
     }
     
     return from(
