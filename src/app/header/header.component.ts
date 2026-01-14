@@ -4,9 +4,15 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { LocaleService } from '../locale/locale.service';
 
 import { LocalePipe } from '../locale/locale.pipe';
-import { MatDialog } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogContent,
+  MatDialogClose,
+} from '@angular/material/dialog';
 import { DialogDataExampleDialog } from '../body/body.component';
 import { TranslocoDirective } from '@jsverse/transloco';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 export interface HeaderAction {
   id: string;
@@ -103,6 +109,10 @@ export class HeaderComponent {
     });
   }
 
+  openImageDialog() {
+    this.#dialog.open(ImageDialog);
+  }
+
   scrollToHelpUs() {
     const element = document.getElementById('help-us');
     if (element) {
@@ -110,3 +120,49 @@ export class HeaderComponent {
     }
   }
 }
+
+@Component({
+  selector: 'image-dialog',
+  template: `
+    <div class="image-dialog-container">
+      <button
+        mat-icon-button
+        class="close-button"
+        [mat-dialog-close]
+        aria-label="Close dialog"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      <img
+        src="images/angeluko-kabalkada.png"
+        alt="Angeluko Kabalkada"
+        class="dialog-image"
+      />
+    </div>
+  `,
+  styles: [
+    `
+      .image-dialog-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .dialog-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    `,
+  ],
+  imports: [MatDialogClose, MatIconModule, MatButtonModule],
+})
+export class ImageDialog {}
