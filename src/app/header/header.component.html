@@ -21,7 +21,6 @@
         <span>{{ t("quintaou") }}</span>
       </div>
     </div>
-
     <img
       class="img-title"
       src="images/title.webp"
@@ -31,28 +30,9 @@
       loading="eager"
       fetchpriority="high"
       (click)="openImageDialog()"
-      style="cursor: pointer;"
+      style="cursor: pointer"
     />
-    <!--<anka-register></anka-register>-->
   </div>
-  <!--<div class="countdown-container">
-    @for (
-      headerAction of headerActions();
-      track headerAction.id;
-      let headerActionIndex = $index
-    ) {
-      <div (click)="openAction(headerActionIndex)">
-        {{ headerAction | locale: "title" }}
-      </div>
-    }-->
-
-  <!--
-          <div>Kabalkada</div>
-    <div>Nola</div>
-    <anka-countdown [date]="date1" />
-    <anka-countdown [date]="date2" />
-    -->
-  <!--</div>-->
   <div class="header-actions">
     <div (click)="openAction(0)">{{ t("cavalcade") }}</div>
     <div (click)="scrollToHelpUs()">{{ t("help-us") }}</div>

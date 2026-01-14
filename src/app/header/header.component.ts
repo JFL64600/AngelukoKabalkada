@@ -1,4 +1,10 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { LocaleComponent } from '../locale/locale.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { LocaleService } from '../locale/locale.service';
@@ -90,6 +96,15 @@ export class HeaderComponent {
     },
   ]);
 
+  constructor() {
+    afterNextRender(() => {
+      this.openImageDialog();
+      setTimeout(() => {
+        this.#dialog.closeAll();
+      }, 10000);
+    });
+  }
+
   openAction(index: number) {
     const headerAction = this.headerActions()[index];
     const dialogRef = this.#dialog.open(DialogDataExampleDialog, {
@@ -125,17 +140,11 @@ export class HeaderComponent {
   selector: 'image-dialog',
   template: `
     <div class="image-dialog-container">
-      <button
-        mat-icon-button
-        class="close-button"
-        [mat-dialog-close]
-        aria-label="Close dialog"
-      >
-        <mat-icon>close</mat-icon>
-      </button>
       <img
-        src="images/angeluko-kabalkada.png"
+        src="images/angeluko-kabalkada.webp"
         alt="Angeluko Kabalkada"
+        width="560"
+        height="792"
         class="dialog-image"
       />
     </div>
@@ -149,13 +158,6 @@ export class HeaderComponent {
         align-items: center;
       }
 
-      .close-button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 1;
-      }
-
       .dialog-image {
         max-width: 100%;
         height: auto;
@@ -163,6 +165,6 @@ export class HeaderComponent {
       }
     `,
   ],
-  imports: [MatDialogClose, MatIconModule, MatButtonModule],
+  imports: [MatIconModule, MatButtonModule],
 })
 export class ImageDialog {}
