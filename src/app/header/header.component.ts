@@ -140,13 +140,23 @@ export class HeaderComponent {
   selector: 'image-dialog',
   template: `
     <div class="image-dialog-container">
-      <img
-        src="images/angeluko-kabalkada.webp"
-        alt="Angeluko Kabalkada"
-        width="560"
-        height="792"
-        class="dialog-image"
-      />
+      <picture class="dialog-image">
+        <source
+          media="(max-resolution: 1.5dppx)"
+          srcset="images/angeluko-kabalkada-min.webp"
+        />
+        <source
+          media="(min-resolution: 1.5dppx)"
+          srcset="images/angeluko-kabalkada.webp"
+        />
+        <img
+          src="images/angeluko-kabalkada.webp"
+          alt="Angeluko Kabalkada"
+          width="560"
+          height="792"
+          class="dialog-image"
+        />
+      </picture>
     </div>
   `,
   styles: [
